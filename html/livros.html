@@ -43,46 +43,127 @@
             </section>
 
             <section class="catalogo">
+                <div class="catalogo-tools">
+                    <div class="section-head">
+                        <div>
+                            <h2>Biblioteca selecionada</h2>
+                            <p class="catalogo-intro">Use os filtros para localizar livros por estado, autenticidade e disponibilidade.</p>
+                        </div>
+                    </div>
+
+                    <div class="catalogo-filtros">
+                        <div class="filtro-grupo">
+                            <label for="busca-livros">Buscar</label>
+                            <input id="busca-livros" type="search" data-filter="search" placeholder="Titulo ou colecao">
+                        </div>
+                        <div class="filtro-grupo">
+                            <label for="estado-livros">Estado</label>
+                            <select id="estado-livros" data-filter="condition">
+                                <option value="">Todos</option>
+                                <option value="novo">Novo</option>
+                                <option value="excelente">Excelente</option>
+                                <option value="muito-bom">Muito bom</option>
+                            </select>
+                        </div>
+                        <div class="filtro-grupo">
+                            <label for="auth-livros">Autenticidade</label>
+                            <select id="auth-livros" data-filter="authenticity">
+                                <option value="">Todos</option>
+                                <option value="edicao-original">Edicao original</option>
+                                <option value="curadoria">Curadoria verificada</option>
+                            </select>
+                        </div>
+                        <div class="filtro-grupo">
+                            <label for="disp-livros">Disponibilidade</label>
+                            <select id="disp-livros" data-filter="availability">
+                                <option value="">Todos</option>
+                                <option value="disponivel">Disponivel</option>
+                                <option value="ultimo">Ultima unidade</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="product-grid">
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="dom casmurro machado de assis novo edicao original disponivel" data-condition="novo" data-authenticity="edicao-original" data-availability="disponivel">
                         <div class="produto-imagem generica">BOOK</div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-disponivel">Disponivel</span>
+                                <span class="produto-badge">Edicao original</span>
+                            </div>
                             <h3>Dom Casmurro</h3>
                             <p>Classico de Machado de Assis em edicao de colecionador.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Novo</li>
+                                <li><strong>Autenticidade:</strong> Edicao original</li>
+                                <li><strong>Disponibilidade:</strong> 6 unidades</li>
+                            </ul>
                             <span class="produto-preco">R$ 80,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Dom Casmurro', 80, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
 
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="o hobbit tolkien excelente curadoria ultimo" data-condition="excelente" data-authenticity="curadoria" data-availability="ultimo">
                         <div class="produto-imagem generica">BOOK</div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-ultimo">Ultima unidade</span>
+                                <span class="produto-badge">Curadoria</span>
+                            </div>
                             <h3>O Hobbit</h3>
                             <p>Aventura fantastica em uma edicao para fa de fantasia.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Excelente</li>
+                                <li><strong>Autenticidade:</strong> Curadoria verificada</li>
+                                <li><strong>Disponibilidade:</strong> 1 unidade</li>
+                            </ul>
                             <span class="produto-preco">R$ 95,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('O Hobbit', 95, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
 
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="harry potter muito bom curadoria disponivel" data-condition="muito-bom" data-authenticity="curadoria" data-availability="disponivel">
                         <div class="produto-imagem generica">BOOK</div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-disponivel">Disponivel</span>
+                                <span class="produto-badge">Curadoria</span>
+                            </div>
                             <h3>Harry Potter</h3>
                             <p>Colecao querida para leitores de todas as idades.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Muito bom</li>
+                                <li><strong>Autenticidade:</strong> Curadoria verificada</li>
+                                <li><strong>Disponibilidade:</strong> 4 unidades</li>
+                            </ul>
                             <span class="produto-preco">R$ 70,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Harry Potter', 70, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
 
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="1984 george orwell excelente edicao original disponivel" data-condition="excelente" data-authenticity="edicao-original" data-availability="disponivel">
                         <div class="produto-imagem generica">BOOK</div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-disponivel">Disponivel</span>
+                                <span class="produto-badge">Edicao original</span>
+                            </div>
                             <h3>1984</h3>
                             <p>Distopia indispensavel em uma prateleira de classicos.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Excelente</li>
+                                <li><strong>Autenticidade:</strong> Edicao original</li>
+                                <li><strong>Disponibilidade:</strong> 3 unidades</li>
+                            </ul>
                             <span class="produto-preco">R$ 60,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('1984', 60, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
+                </div>
+
+                <div class="catalogo-vazio">
+                    Nenhum livro corresponde aos filtros selecionados.
                 </div>
             </section>
         </div>

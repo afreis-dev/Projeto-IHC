@@ -285,6 +285,48 @@ input {
     font-size: clamp(1.4rem, 2.8vw, 2.3rem);
 }
 
+.catalogo-tools {
+    display: grid;
+    gap: 18px;
+    margin-bottom: 22px;
+}
+
+.catalogo-intro {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+.catalogo-filtros {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+    padding: 18px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: rgba(255, 250, 245, 0.82);
+}
+
+.filtro-grupo {
+    display: grid;
+    gap: 8px;
+}
+
+.filtro-grupo label {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--brand);
+}
+
+.filtro-grupo input,
+.filtro-grupo select {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid rgba(91, 52, 32, 0.14);
+    border-radius: 14px;
+    background: #fffdfa;
+    color: var(--text);
+}
+
 .category-grid,
 .product-grid,
 .login-cards {
@@ -361,10 +403,72 @@ input {
     padding: 20px;
 }
 
+.produto-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.produto-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(91, 52, 32, 0.08);
+    color: var(--brand);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.produto-badge.status-disponivel {
+    background: rgba(50, 122, 83, 0.14);
+    color: #2f6d4b;
+}
+
+.produto-badge.status-ultimo {
+    background: rgba(201, 134, 72, 0.2);
+    color: #8b5228;
+}
+
+.produto-badge.status-esgotado {
+    background: rgba(150, 64, 64, 0.16);
+    color: #8f3434;
+}
+
+.produto-meta {
+    display: grid;
+    gap: 8px;
+    list-style: none;
+    color: var(--muted);
+    font-size: 0.94rem;
+}
+
+.produto-meta strong {
+    color: var(--brand-strong);
+}
+
 .produto-preco {
     font-size: 1.2rem;
     font-weight: 800;
     color: var(--brand-strong);
+}
+
+.produto-card.is-hidden {
+    display: none;
+}
+
+.catalogo-vazio {
+    display: none;
+    padding: 26px;
+    border: 1px dashed rgba(91, 52, 32, 0.24);
+    border-radius: 20px;
+    background: rgba(255, 250, 245, 0.75);
+    text-align: center;
+    color: var(--muted);
+}
+
+.catalogo-vazio.is-visible {
+    display: block;
 }
 
 .produto-acao {
@@ -608,6 +712,7 @@ body.is-entering .page-main {
         grid-template-columns: 1fr;
     }
 
+    .catalogo-filtros,
     .category-grid,
     .product-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -641,6 +746,7 @@ body.is-entering .page-main {
         padding: 22px;
     }
 
+    .catalogo-filtros,
     .category-grid,
     .product-grid,
     .login-cards {

@@ -80,6 +80,62 @@ function configurarTransicaoEntrePaginas() {
     });
 }
 
+function normalizarTexto(valor) {
+    return (valor || "")
+        .toString()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+}
+
+function configurarFiltrosCatalogo() {
+    document.querySelectorAll(".catalogo").forEach((catalogo) => {
+        const filtros = catalogo.querySelector(".catalogo-filtros");
+        const cards = Array.from(catalogo.querySelectorAll(".produto-card"));
+        const vazio = catalogo.querySelector(".catalogo-vazio");
+
+        if (!filtros || cards.length === 0) {
+            return;
+        }
+
+        const atualizar = () => {
+            const termo = normalizarTexto(filtros.querySelector('[data-filter="search"]')?.value);
+            const condicao = filtros.querySelector('[data-filter="condition"]')?.value || "";
+            const autenticidade = filtros.querySelector('[data-filter="authenticity"]')?.value || "";
+            const disponibilidade = filtros.querySelector('[data-filter="availability"]')?.value || "";
+            let visiveis = 0;
+
+            cards.forEach((card) => {
+                const textoCard = normalizarTexto(card.dataset.search);
+                const correspondeTermo = !termo || textoCard.includes(termo);
+                const correspondeCondicao = !condicao || card.dataset.condition === condicao;
+                const correspondeAutenticidade = !autenticidade || card.dataset.authenticity === autenticidade;
+                const correspondeDisponibilidade = !disponibilidade || card.dataset.availability === disponibilidade;
+
+                const mostrar =
+                    correspondeTermo &&
+                    correspondeCondicao &&
+                    correspondeAutenticidade &&
+                    correspondeDisponibilidade;
+
+                card.classList.toggle("is-hidden", !mostrar);
+
+                if (mostrar) {
+                    visiveis += 1;
+                }
+            });
+
+            if (vazio) {
+                vazio.classList.toggle("is-visible", visiveis === 0);
+            }
+        };
+
+        filtros.addEventListener("input", atualizar);
+        filtros.addEventListener("change", atualizar);
+        atualizar();
+    });
+}
+
 function salvarCarrinho(carrinho) {
     localStorage.setItem("carrinho", JSON.stringify(carrinho));
 }
@@ -157,5 +213,6 @@ function carregarCarrinho() {
 
 document.addEventListener("DOMContentLoaded", () => {
     configurarTransicaoEntrePaginas();
+    configurarFiltrosCatalogo();
     carregarCarrinho();
 });

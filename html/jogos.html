@@ -43,54 +43,135 @@
             </section>
 
             <section class="catalogo">
+                <div class="catalogo-tools">
+                    <div class="section-head">
+                        <div>
+                            <h2>Colecao de jogos</h2>
+                            <p class="catalogo-intro">Confira disponibilidade, autenticidade e estado do console antes de fechar a compra.</p>
+                        </div>
+                    </div>
+
+                    <div class="catalogo-filtros">
+                        <div class="filtro-grupo">
+                            <label for="busca-jogos">Buscar</label>
+                            <input id="busca-jogos" type="search" data-filter="search" placeholder="Console ou modelo">
+                        </div>
+                        <div class="filtro-grupo">
+                            <label for="estado-jogos">Estado</label>
+                            <select id="estado-jogos" data-filter="condition">
+                                <option value="">Todos</option>
+                                <option value="excelente">Excelente</option>
+                                <option value="muito-bom">Muito bom</option>
+                                <option value="restaurado">Restaurado</option>
+                            </select>
+                        </div>
+                        <div class="filtro-grupo">
+                            <label for="auth-jogos">Autenticidade</label>
+                            <select id="auth-jogos" data-filter="authenticity">
+                                <option value="">Todos</option>
+                                <option value="serial">Serial verificado</option>
+                                <option value="curadoria">Curadoria verificada</option>
+                            </select>
+                        </div>
+                        <div class="filtro-grupo">
+                            <label for="disp-jogos">Disponibilidade</label>
+                            <select id="disp-jogos" data-filter="availability">
+                                <option value="">Todos</option>
+                                <option value="disponivel">Disponivel</option>
+                                <option value="ultimo">Ultima unidade</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="product-grid">
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="nintendo game boy excelente serial disponivel" data-condition="excelente" data-authenticity="serial" data-availability="disponivel">
                         <div class="produto-imagem">
                             <img src="../assets/Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
                         </div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-disponivel">Disponivel</span>
+                                <span class="produto-badge">Serial verificado</span>
+                            </div>
                             <h3>Nintendo Game Boy</h3>
                             <p>Console portatil classico em bom estado visual.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Excelente</li>
+                                <li><strong>Autenticidade:</strong> Serial verificado</li>
+                                <li><strong>Disponibilidade:</strong> 2 unidades</li>
+                            </ul>
                             <span class="produto-preco">R$ 400,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Nintendo Game Boy', 400, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
 
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="game boy color restaurado curadoria ultimo" data-condition="restaurado" data-authenticity="curadoria" data-availability="ultimo">
                         <div class="produto-imagem">
                             <img src="../assets/Game-Boy sem fundo branco.png" alt="Game Boy Color">
                         </div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-ultimo">Ultima unidade</span>
+                                <span class="produto-badge">Curadoria</span>
+                            </div>
                             <h3>Game Boy Color</h3>
                             <p>Versao colorida para quem busca nostalgia pura.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Restaurado</li>
+                                <li><strong>Autenticidade:</strong> Curadoria verificada</li>
+                                <li><strong>Disponibilidade:</strong> 1 unidade</li>
+                            </ul>
                             <span class="produto-preco">R$ 460,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Color', 460, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
 
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="game boy pocket muito bom serial disponivel" data-condition="muito-bom" data-authenticity="serial" data-availability="disponivel">
                         <div class="produto-imagem">
                             <img src="../assets/Game-Boy sem fundo branco.png" alt="Game Boy Pocket">
                         </div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-disponivel">Disponivel</span>
+                                <span class="produto-badge">Serial verificado</span>
+                            </div>
                             <h3>Game Boy Pocket</h3>
                             <p>Modelo compacto para colecoes especiais.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Muito bom</li>
+                                <li><strong>Autenticidade:</strong> Serial verificado</li>
+                                <li><strong>Disponibilidade:</strong> 4 unidades</li>
+                            </ul>
                             <span class="produto-preco">R$ 430,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Pocket', 430, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
 
-                    <article class="produto-card">
+                    <article class="produto-card" data-search="game boy classic excelente curadoria disponivel" data-condition="excelente" data-authenticity="curadoria" data-availability="disponivel">
                         <div class="produto-imagem">
                             <img src="../assets/Game-Boy sem fundo branco.png" alt="Game Boy Classic">
                         </div>
                         <div class="produto-info">
+                            <div class="produto-badges">
+                                <span class="produto-badge status-disponivel">Disponivel</span>
+                                <span class="produto-badge">Curadoria</span>
+                            </div>
                             <h3>Game Boy Classic</h3>
                             <p>Um item indispensavel para amantes de portateis retro.</p>
+                            <ul class="produto-meta">
+                                <li><strong>Estado:</strong> Excelente</li>
+                                <li><strong>Autenticidade:</strong> Curadoria verificada</li>
+                                <li><strong>Disponibilidade:</strong> 3 unidades</li>
+                            </ul>
                             <span class="produto-preco">R$ 420,00</span>
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Classic', 420, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
                         </div>
                     </article>
+                </div>
+
+                <div class="catalogo-vazio">
+                    Nenhum jogo corresponde aos filtros selecionados.
                 </div>
             </section>
         </div>
