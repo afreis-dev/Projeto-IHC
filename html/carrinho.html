@@ -3,59 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
     <title>Carrinho | Relic</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="header">
-        <nav class="barNavegacao">
-            <a href="../index.html" class="logo">RELIC</a>
-            <a href="./vinil.html">Vinil</a>
-            <a href="./cartas.html" class="ativo">Cartas</a>
-            <a href="./livros.html">Livros</a>
-            <a href="./jogos.html">Jogos</a>
-            <input type="search" name="pesquisa" id="pesquisa" placeholder="Buscar item raro">
-            <a href="./entra.html">Entrar</a>
-        </nav>
+        <div class="site-shell">
+            <nav class="barNavegacao">
+                <a href="../index.html" class="nav-brand">RELIC</a>
+                <div class="nav-links">
+                    <a href="./vinil.html">Vinil</a>
+                    <a href="./cartas.html">Cartas</a>
+                    <a href="./livros.html">Livros</a>
+                    <a href="./jogos.html">Jogos</a>
+                </div>
+                <div class="nav-actions">
+                    <input type="search" id="pesquisa" placeholder="Pesquisar produto">
+                    <a href="./carrinho.html" class="ativo">Carrinho</a>
+                    <a href="./entra.html">Entrar</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main class="carrinho-container">
+    <main class="page-main">
+        <div class="site-shell">
+            <section class="carrinho-container">
+                <div class="carrinho-header">
+                    <div>
+                        <span class="tag">Resumo</span>
+                        <h1>Seu carrinho</h1>
+                    </div>
+                    <a href="../index.html" class="button-secondary">Continuar comprando</a>
+                </div>
 
-    <h1>Seu Carrinho</h1>
+                <div class="lista-carrinho"></div>
 
-    <div class="lista-carrinho">
-
-        <div class="item-carrinho">
-            <img src="../assets/arianavinil.png" alt="Vinil Ariana Grande">
-
-            <div class="info">
-                <h3>Vinil Ariana Grande</h3>
-                <p>Álbum em vinil edição especial.</p>
-                <span>R$ 120,00</span>
-            </div>
-
-            <button class="remover">Remover</button>
+                <div class="total">
+                    <h2>Total: R$ 0,00</h2>
+                    <button class="finalizar" type="button">Finalizar compra</button>
+                </div>
+            </section>
         </div>
+    </main>
 
-        <div class="item-carrinho">
-            <img src="..\assets\Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
-
-            <div class="info">
-                <h3>Nintendo Game Boy</h3>
-                <p>Nintendo Game Boy retro</p>
-                <span>R$ 400,00</span>
-            </div>
-
-            <button class="remover">Remover</button>
-        </div>
-
-    </div>
-
-    <div class="total">
-        <h2>Total: R$ 520,00</h2>
-        <button class="finalizar">Finalizar Compra</button>
-    </div>
-
-</main>
+    <script src="../js/script.js"></script>
 </body>
 </html>

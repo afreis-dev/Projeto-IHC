@@ -1,63 +1,55 @@
-# eVinyl
+# Relic
 
-Marketplace temático voltado para itens vintage, raros e colecionáveis como vinis, cartas, livros e jogos clássicos.
+Marketplace tematico voltado para itens vintage, raros e colecionaveis, com foco em vinis, cartas, livros e jogos classicos.
 
 ## Sobre o projeto
 
-Este projeto foi desenvolvido para a disciplina de **Interfaces Humano-Computador (IHC)** com o objetivo de criar um **protótipo interativo** de uma interface digital com foco em qualidade de uso.
+Este projeto foi desenvolvido para a disciplina de **Interfaces Humano-Computador (IHC)** como um prototipo navegavel de marketplace. A proposta e construir uma experiencia simples, organizada e visualmente consistente para explorar produtos de colecao.
 
-A proposta do grupo e construir uma experiência de marketplace que permita ao usuário:
+O projeto busca apoiar tarefas como:
 
-- encontrar produtos vintage com facilidade
-- visualizar informações importantes do item
-- adicionar produtos ao carrinho
-- concluir a compra com feedback claro do sistema
+- encontrar produtos por categoria
+- visualizar destaques da loja
+- adicionar itens ao carrinho
+- revisar o resumo da compra
+- navegar por telas com feedback visual mais claro
 
-Mais do que uma interface bonita, o projeto busca demonstrar princípios de:
+## Funcionalidades atuais
 
-- usabilidade
-- eficácia
-- eficiência
-- prevenção e tratamento de erros
-- feedback ao usuário
+- pagina inicial com destaque e atalhos para categorias
+- navegacao entre vinil, cartas, livros e jogos
+- pagina de login
+- carrinho com persistencia via `localStorage`
+- layout responsivo compartilhado entre as telas
+- transicao de carregamento entre paginas
 
-## Problema que estamos resolvendo
+## Estrutura do projeto
 
-Pessoas interessadas em itens vintage e colecionáveis muitas vezes encontram dificuldade para localizar produtos raros com informações claras sobre estado de conservação, autenticidade, preço e disponibilidade.
+```text
+Projeto-IHC/
+|-- index.html
+|-- README.md
+|-- assets/
+|   |-- arianavinil.png
+|   |-- Game-Boy sem fundo branco.png
+|-- css/
+|   |-- style.css
+|-- html/
+|   |-- vinil.html
+|   |-- cartas.html
+|   |-- livros.html
+|   |-- jogos.html
+|   |-- carrinho.html
+|   |-- entra.html
+|-- js/
+|   |-- script.js
+```
 
-O projeto busca resolver esse problema por meio de uma interface simples, intuitiva e organizada.
+## Como executar
 
-## Publico-alvo
-
-- colecionadores
-- apreciadores de cultura retrô
-- usuários interessados em vinis, cartas, livros e jogos antigos
-- pessoas que valorizam itens raros, clássicos e de edição limitada
-
-## Funcionalidades previstas
-
-- página inicial com destaques e categorias
-- barra de pesquisa
-- navegação por categorias
-- listagem de produtos
-- página de detalhes do produto
-- carrinho de compras
-- feedbacks de carregamento, sucesso e erro
-- fluxo principal de compra
-- fluxo alternativo com recuperacao de erro
-
-## Estrutura do protótipo
-
-O protótipo foi planejado para conter pelo menos:
-
-- 5 telas
-- 1 fluxo principal completo
-- 1 fluxo alternativo com erro
-- 3 ou mais estados do sistema
-
-Fluxo principal sugerido:
-
-`Home -> Listagem -> Produto -> Carrinho -> Confirmação`
+1. Clone este repositorio.
+2. Abra a pasta do projeto.
+3. Execute o arquivo `index.html` no navegador.
 
 ## Tecnologias utilizadas
 
@@ -67,49 +59,35 @@ Fluxo principal sugerido:
 - `Git`
 - `GitHub`
 
-## Estrutura de pastas
+## Melhorias recentes
 
-```text
-Projeto-IHC/
-|-- index.html
-|-- README.md
-|-- css/
-|   |-- style.css
-|-- html/
-|-- js/
-|   |-- script.js
-```
-
-## Como executar o projeto
-
-1. Clone este repositorio.
-2. Abra a pasta do projeto.
-3. Execute o arquivo `index.html` no navegador.
+- correcao de conflitos de merge e tags HTML quebradas
+- padronizacao da navegacao entre as paginas
+- reorganizacao do estilo visual em um CSS unico
+- ajuste do carrinho para renderizar itens e total corretamente
+- remocao de referencias a caminhos de imagem inexistentes
+- implementacao de transicao global de carregamento sem pagina separada
 
 ## Objetivos de IHC
 
-Este projeto foi pensado para atender aos criterios da disciplina, incluindo:
+O prototipo foi pensado para exercitar principios como:
 
-- definição de um problema real de uso
-- definição do público-alvo
-- criação de interface autoral
-- desenvolvimento de protótipo interativo
-- simulação de estados do sistema
-- prevenção e recuperação de erros
-- aplicação de mini teste de usabilidade
+- usabilidade
+- eficiencia de navegacao
+- consistencia visual
+- feedback ao usuario
+- prevencao e tratamento de erros
 
 ## Equipe
 
-Preencha com os nomes do grupo:
+- Arthur de Almeida Oliveira - `arthurdalmeida`
+- Arthur Filipe Silva dos Reis - `afreis-dev`
+- Gabriel Gondim Malta - `bielmalta`
+- Luisa Fischer Veras Mascena - `luisafischerv`
+- Maria Luisa Dijck Muniz - `marialuisadmuniz`
+- Matheus Assis de Souza Jacome - `cabelinho250`
+- Sofia Villela Vieira - `SofiaVillela`
 
-- Arthur de Almeida Oliveira - arthurdalmeida
-- Arthur Filipe Silva dos Reis - afreis-dev
-- Gabriel Gondim Malta - bielmalta
-- Luísa Fischer Veras Mascena - luisafischerv
-- Maria Luísa Dijck Muniz - marialuisadmuniz
-- Matheus Assis de Souza Jácome - cabelinho250
-- Sofia Villela Vieira - SofiaVillela
+## Status
 
-## Status do projeto
-
-Em desenvolvimento...
+Em desenvolvimento.
