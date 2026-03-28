@@ -19,6 +19,7 @@
                 </div>
                 <div class="nav-actions">
                     <input type="search" id="pesquisa" placeholder="Pesquisar produto">
+                    <a href="./favoritos.html">Favoritos</a>
                     <a href="./carrinho.html">Carrinho</a>
                     <a href="./entra.html">Entrar</a>
                 </div>
@@ -85,6 +86,7 @@
                 </div>
 
                 <div class="product-grid">
+
                     <article class="produto-card" data-search="dom casmurro machado de assis novo edicao original disponivel" data-condition="novo" data-authenticity="edicao-original" data-availability="disponivel">
                         <div class="produto-imagem">
                             <img src="../assets/Dom Casmurro-livro.png" alt="Livro Dom Casmurro">
@@ -102,7 +104,10 @@
                                 <li><strong>Disponibilidade:</strong> 6 unidades</li>
                             </ul>
                             <span class="produto-preco">R$ 80,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Dom Casmurro', 80, '../assets/Dom Casmurro-livro.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('Dom Casmurro', '../assets/Dom Casmurro-livro.png')">❤ Favoritar</button>
                         </div>
                     </article>
 
@@ -123,7 +128,10 @@
                                 <li><strong>Disponibilidade:</strong> 1 unidade</li>
                             </ul>
                             <span class="produto-preco">R$ 95,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('O Hobbit', 95, '../assets/O Hobbit-livro.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('O Hobbit', '../assets/O Hobbit-livro.png')">❤ Favoritar</button>
                         </div>
                     </article>
 
@@ -144,7 +152,10 @@
                                 <li><strong>Disponibilidade:</strong> 4 unidades</li>
                             </ul>
                             <span class="produto-preco">R$ 70,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Harry Potter', 70, '../assets/Harry Potter-livro.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('Harry Potter', '../assets/Harry Potter-livro.png')">❤ Favoritar</button>
                         </div>
                     </article>
 
@@ -165,9 +176,13 @@
                                 <li><strong>Disponibilidade:</strong> 3 unidades</li>
                             </ul>
                             <span class="produto-preco">R$ 60,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('1984', 60, '../assets/1984-livro.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('1984', '../assets/1984-livro.png')">❤ Favoritar</button>
                         </div>
                     </article>
+
                 </div>
 
                 <div class="catalogo-vazio">
@@ -178,5 +193,6 @@
     </main>
 
     <script src="../js/script.js"></script>
+    <script src="../js/favoritos.js"></script>
 </body>
 </html>

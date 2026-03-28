@@ -19,6 +19,7 @@
                 </div>
                 <div class="nav-actions">
                     <input type="search" id="pesquisa" placeholder="Pesquisar produto">
+                    <a href="./favoritos.html">Favoritos</a>
                     <a href="./carrinho.html">Carrinho</a>
                     <a href="./entra.html">Entrar</a>
                 </div>
@@ -85,6 +86,7 @@
                 </div>
 
                 <div class="product-grid">
+
                     <article class="produto-card" data-search="super nintendo excelente serial disponivel console retro" data-condition="excelente" data-authenticity="serial" data-availability="disponivel">
                         <div class="produto-imagem">
                             <img src="../assets/super nintendo-console.png" alt="Super Nintendo">
@@ -102,7 +104,10 @@
                                 <li><strong>Disponibilidade:</strong> 2 unidades</li>
                             </ul>
                             <span class="produto-preco">R$ 400,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Super Nintendo', 400, '../assets/super nintendo-console.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('Super Nintendo', '../assets/super nintendo-console.png')">❤ Favoritar</button>
                         </div>
                     </article>
 
@@ -123,7 +128,10 @@
                                 <li><strong>Disponibilidade:</strong> 1 unidade</li>
                             </ul>
                             <span class="produto-preco">R$ 460,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('PlayStation 1', 460, '../assets/ps1-console.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('PlayStation 1', '../assets/ps1-console.png')">❤ Favoritar</button>
                         </div>
                     </article>
 
@@ -144,7 +152,10 @@
                                 <li><strong>Disponibilidade:</strong> 4 unidades</li>
                             </ul>
                             <span class="produto-preco">R$ 430,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Advance', 430, '../assets/gameboy advance.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('Game Boy Advance', '../assets/gameboy advance.png')">❤ Favoritar</button>
                         </div>
                     </article>
 
@@ -165,9 +176,13 @@
                                 <li><strong>Disponibilidade:</strong> 3 unidades</li>
                             </ul>
                             <span class="produto-preco">R$ 420,00</span>
+
                             <button class="produto-acao" type="button" onclick="adicionarCarrinho('Deadpool Pinball', 420, '../assets/deadpool-jogo.png')">Adicionar ao carrinho</button>
+
+                            <button class="produto-acao secundario" type="button" onclick="adicionarFavoritos('Deadpool Pinball', '../assets/deadpool-jogo.png')">❤ Favoritar</button>
                         </div>
                     </article>
+
                 </div>
 
                 <div class="catalogo-vazio">
@@ -178,5 +193,6 @@
     </main>
 
     <script src="../js/script.js"></script>
+    <script src="../js/favoritos.js"></script>
 </body>
 </html>
