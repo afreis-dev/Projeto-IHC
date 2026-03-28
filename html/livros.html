@@ -3,65 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
     <title>Livros | Relic</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="header">
-        <nav class="barNavegacao">
-            <a href="../index.html">eVinyl</a>
-            <a href="vinil.html">Vinil</a>
-            <a href="cartas.html">Cartas</a>
-            <a href="livros.html">Livros</a>
-            <a href="jogos.html">Jogos</a>
-            <input type="text">
-            <a href="entra.html">Entrar</a>
-        </nav>
+        <div class="site-shell">
+            <nav class="barNavegacao">
+                <a href="../index.html" class="nav-brand">RELIC</a>
+                <div class="nav-links">
+                    <a href="./vinil.html">Vinil</a>
+                    <a href="./cartas.html">Cartas</a>
+                    <a href="./livros.html" class="ativo">Livros</a>
+                    <a href="./jogos.html">Jogos</a>
+                </div>
+                <div class="nav-actions">
+                    <input type="search" id="pesquisa" placeholder="Pesquisar produto">
+                    <a href="./carrinho.html">Carrinho</a>
+                    <a href="./entra.html">Entrar</a>
+                </div>
+            </nav>
+        </div>
     </header>
 
-    <main class="conteudo">
-        <h1>Livros</h1>
+    <main class="page-main">
+        <div class="site-shell">
+            <section class="page-hero">
+                <div class="page-hero-copy">
+                    <span class="tag">Categoria</span>
+                    <h1>Livros classicos em uma vitrine mais estavel.</h1>
+                    <p>Corrigi a estrutura da pagina e removi textos com codificacao quebrada.</p>
+                </div>
+                <div class="page-hero-panel">
+                    <div class="panel-highlight">
+                        <strong>Edicoes selecionadas</strong>
+                        <p>Catalogo textual com layout responsivo para evitar dependencias de imagens ausentes.</p>
+                    </div>
+                </div>
+            </section>
 
-        <div class="amostras_inicio">
-            <div class="cardprodutos">
-                <img src="https://image.isu.pub/191205122940-56eb54f17cda10479f55169d92c6a2e3/jpg/page_1_thumb_large.jpg" alt="Dom Casmurro">
-                <h3>Dom Casmurro</h3>
-                <p class="descricao">Livro clássico de Machado de Assis.</p>
-                <span class="preco">R$ 80,00</span>
-            </div>
+            <section class="catalogo">
+                <div class="product-grid">
+                    <article class="produto-card">
+                        <div class="produto-imagem generica">BOOK</div>
+                        <div class="produto-info">
+                            <h3>Dom Casmurro</h3>
+                            <p>Classico de Machado de Assis em edicao de colecionador.</p>
+                            <span class="produto-preco">R$ 80,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('Dom Casmurro', 80, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
 
-            <div class="cardprodutos">
-                <img src="https://img.elo7.com.br/product/zoom/268E0A6/big-poster-o-hobbit-uma-jornada-inesperada-lo06-tam-90x60-cm-nerd.jpg" alt="O Hobbit">
-                <h3>O Hobbit</h3>
-                <p class="descricao">Aventura fantástica de Tolkien.</p>
-                <span class="preco">R$ 95,00</span>
-            </div>
+                    <article class="produto-card">
+                        <div class="produto-imagem generica">BOOK</div>
+                        <div class="produto-info">
+                            <h3>O Hobbit</h3>
+                            <p>Aventura fantastica em uma edicao para fa de fantasia.</p>
+                            <span class="produto-preco">R$ 95,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('O Hobbit', 95, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
 
-            <div class="cardprodutos">
-                <img src="https://m.media-amazon.com/images/I/81ibfYk4qmL.jpg" alt="Harry Potter">
-                <h3>Harry Potter</h3>
-                <p class="descricao">Uma jornada mágica e inesquecível.</p>
-                <span class="preco">R$ 70,00</span>
-            </div>
+                    <article class="produto-card">
+                        <div class="produto-imagem generica">BOOK</div>
+                        <div class="produto-info">
+                            <h3>Harry Potter</h3>
+                            <p>Colecao querida para leitores de todas as idades.</p>
+                            <span class="produto-preco">R$ 70,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('Harry Potter', 70, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
 
-            <div class="cardprodutos">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYnyODt5VpH5MbJJdfs8TeIQbutjERMM0SUA&s" alt="1984">
-                <h3>1984</h3>
-                <p class="descricao">Distopia clássica de George Orwell.</p>
-                <span class="preco">R$ 92,00</span>
-            </div>
+                    <article class="produto-card">
+                        <div class="produto-imagem generica">BOOK</div>
+                        <div class="produto-info">
+                            <h3>1984</h3>
+                            <p>Distopia indispensavel em uma prateleira de classicos.</p>
+                            <span class="produto-preco">R$ 60,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('1984', 60, '../assets/arianavinil.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
         </div>
     </main>
-</body>
-</html>
-            <a href="../index.html" class="logo">RELIC</a>
-            <a href="./vinil.html">Vinil</a>
-            <a href="./cartas.html">Cartas</a>
-            <a href="./livros.html" class="ativo">Livros</a>
-            <a href="./jogos.html">Jogos</a>
-            <input type="search" name="pesquisa" id="pesquisa" placeholder="Buscar item raro">
-            <a href="./entra.html">Entrar</a>
-        </nav>
-    </header>
+
+    <script src="../js/script.js"></script>
 </body>
 </html>

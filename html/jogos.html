@@ -3,55 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
     <title>Jogos | Relic</title>
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
     <header class="header">
-        <nav class="barNavegacao">
-            <a href="../index.html" class="logo">RELIC</a>
-            <a href="./vinil.html">Vinil</a>
-            <a href="./cartas.html">Cartas</a>
-            <a href="./livros.html">Livros</a>
-            <a href="./jogos.html" class="ativo">Jogos</a>
-            <input type="search" name="pesquisa" id="pesquisa" placeholder="Buscar item raro">
-            <a href="./entra.html">Entrar</a>
-        </nav>
+        <div class="site-shell">
+            <nav class="barNavegacao">
+                <a href="../index.html" class="nav-brand">RELIC</a>
+                <div class="nav-links">
+                    <a href="./vinil.html">Vinil</a>
+                    <a href="./cartas.html">Cartas</a>
+                    <a href="./livros.html">Livros</a>
+                    <a href="./jogos.html" class="ativo">Jogos</a>
+                </div>
+                <div class="nav-actions">
+                    <input type="search" id="pesquisa" placeholder="Pesquisar produto">
+                    <a href="./carrinho.html">Carrinho</a>
+                    <a href="./entra.html">Entrar</a>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-        <section class="inicio">
-            <div class="amostras_inicio">
-                <div class="amostras_cima">
-                    <div class="cardprodutos">
-                        <img src="../assets/Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
-                        <h3>Nintendo Game Boy</h3>
-                        <p class="descricao">Nintendo Game Boy retro.</p>
-                        <span class="preco">R$ 400,00</span>
-                    </div>
-
-                    <div class="cardprodutos">
-                        <img src="../assets/Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
-                        <h3>Nintendo Game Boy</h3>
-                        <p class="descricao">Nintendo Game Boy retro.</p>
-                        <span class="preco">R$ 400,00</span>
-                    </div>
-
-                    <div class="cardprodutos">
-                        <img src="../assets/Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
-                        <h3>Nintendo Game Boy</h3>
-                        <p class="descricao">Nintendo Game Boy retro.</p>
-                        <span class="preco">R$ 400,00</span>
-                    </div>
-
-                    <div class="cardprodutos">
-                        <img src="../assets/Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
-                        <h3>Nintendo Game Boy</h3>
-                        <p class="descricao">Nintendo Game Boy retro.</p>
-                        <span class="preco">R$ 400,00</span>
+    <main class="page-main">
+        <div class="site-shell">
+            <section class="page-hero">
+                <div class="page-hero-copy">
+                    <span class="tag">Categoria</span>
+                    <h1>Jogos retro com layout corrigido.</h1>
+                    <p>Usei os assets existentes do projeto e deixei os cards consistentes com as outras vitrines.</p>
+                </div>
+                <div class="page-hero-panel">
+                    <div class="panel-highlight">
+                        <strong>Console iconico</strong>
+                        <p>O Game Boy agora aparece em uma pagina sem markup duplicado ou desalinhado.</p>
                     </div>
                 </div>
-            </div>
-        </section>
-    </header>
+            </section>
+
+            <section class="catalogo">
+                <div class="product-grid">
+                    <article class="produto-card">
+                        <div class="produto-imagem">
+                            <img src="../assets/Game-Boy sem fundo branco.png" alt="Nintendo Game Boy">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Nintendo Game Boy</h3>
+                            <p>Console portatil classico em bom estado visual.</p>
+                            <span class="produto-preco">R$ 400,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('Nintendo Game Boy', 400, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-imagem">
+                            <img src="../assets/Game-Boy sem fundo branco.png" alt="Game Boy Color">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Game Boy Color</h3>
+                            <p>Versao colorida para quem busca nostalgia pura.</p>
+                            <span class="produto-preco">R$ 460,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Color', 460, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-imagem">
+                            <img src="../assets/Game-Boy sem fundo branco.png" alt="Game Boy Pocket">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Game Boy Pocket</h3>
+                            <p>Modelo compacto para colecoes especiais.</p>
+                            <span class="produto-preco">R$ 430,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Pocket', 430, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+
+                    <article class="produto-card">
+                        <div class="produto-imagem">
+                            <img src="../assets/Game-Boy sem fundo branco.png" alt="Game Boy Classic">
+                        </div>
+                        <div class="produto-info">
+                            <h3>Game Boy Classic</h3>
+                            <p>Um item indispensavel para amantes de portateis retro.</p>
+                            <span class="produto-preco">R$ 420,00</span>
+                            <button class="produto-acao" type="button" onclick="adicionarCarrinho('Game Boy Classic', 420, '../assets/Game-Boy sem fundo branco.png')">Adicionar ao carrinho</button>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
 
     <script src="../js/script.js"></script>
 </body>
