@@ -1,4 +1,3 @@
-
 function lerCarrinho() {
     try {
         return JSON.parse(localStorage.getItem("carrinho")) || [];
@@ -112,6 +111,7 @@ function removerFavorito(index) {
 
 function carregarFavoritos() {
     const lista = document.querySelector(".lista-favoritos");
+    const total = document.getElementById("total-itens");
 
     if (!lista) return;
 
@@ -126,6 +126,8 @@ function carregarFavoritos() {
                 </div>
             </div>
         `;
+
+        if (total) total.textContent = "Total de itens: 0";
         return;
     }
 
@@ -140,6 +142,8 @@ function carregarFavoritos() {
             </div>
         `;
     }).join("");
+
+    if (total) total.textContent = `Total de itens: ${favoritos.length}`;
 }
 
 function normalizarTexto(valor) {
