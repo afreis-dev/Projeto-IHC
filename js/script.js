@@ -216,6 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarFiltrosCatalogo();
     carregarCarrinho();
     carregarResumoPedido();
+    configurarConfirmacaoPedido();
 });
 
 
@@ -261,4 +262,25 @@ function carregarResumoPedido() {
   subtotalElemento.textContent = formatarPreco(subtotal);
   freteElemento.textContent = formatarPreco(frete);
   totalElemento.textContent = formatarPreco(total);
+}
+
+function configurarConfirmacaoPedido() {
+  const botao = document.querySelector(".btn-confirmar");
+
+  if (!botao) return;
+
+  botao.addEventListener("click", () => {
+    const carrinho = lerCarrinho();
+
+    if (carrinho.length === 0) {
+      alert("Seu carrinho está vazio.");
+      return;
+    }
+
+    // limpa carrinho
+    localStorage.removeItem("carrinho");
+
+    // redireciona
+    window.location.href = "compra-realizada.html";
+  });
 }

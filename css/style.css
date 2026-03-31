@@ -1044,3 +1044,38 @@ body {
     font-size: 36px;
   }
 }
+
+
+.sucesso-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  text-align: center;
+}
+
+.sucesso-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.sucesso-container p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.btn-voltar {
+  background: #6b3f24;
+  color: #fff;
+  padding: 15px 30px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.btn-voltar:hover {
+  opacity: 0.9;
+}
