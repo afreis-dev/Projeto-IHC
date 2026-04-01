@@ -143,6 +143,61 @@ input {
     align-items: stretch;
 }
 
+.destaques-container,
+.cartas-container {
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    justify-content: center;
+}
+
+.livros-container{
+    display: flex;
+    gap: 16px;
+    margin-top: 12px;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.mini-card {
+    background: #f6efe7;
+    border-radius: 12px;
+    padding: 10px;
+    width: 180px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+
+    transition: 0.2s;
+}
+
+.livros-container .mini-card {
+    width: 140px;
+}
+
+.mini-card:hover {
+    transform: scale(1.05);
+}
+
+.mini-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.nome {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.preco {
+    font-size: 12px;
+    font-weight: bold;
+    color: #4b2e2e;
+}
+
 .hero-copy,
 .hero-panel,
 .page-hero-copy,
