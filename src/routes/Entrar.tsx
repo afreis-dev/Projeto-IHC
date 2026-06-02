@@ -33,6 +33,12 @@ export default function Entrar() {
   const [confirmaInvalida, setConfirmaInvalida] = useState(false);
   const confirmaRef = useRef<HTMLInputElement>(null);
 
+  // LGPD / boas práticas de login
+  const [verLoginSenha, setVerLoginSenha] = useState(false);
+  const [verRegSenha, setVerRegSenha] = useState(false);
+  const [verRegConfirma, setVerRegConfirma] = useState(false);
+  const [consentido, setConsentido] = useState(false);
+
   const feedbackId = useId();
   const loginTabId = useId();
   const cadastroTabId = useId();
@@ -68,6 +74,11 @@ export default function Entrar() {
 
   function enviarCadastro(e: React.FormEvent) {
     e.preventDefault();
+    if (!consentido) {
+      setFeedback({ msg: "Para criar a conta, confirme que leu o aviso de privacidade.", tipo: "error" });
+      showToast("Confirme o aviso de privacidade para continuar.", "error");
+      return;
+    }
     if (regSenha !== regConfirma) {
       setConfirmaInvalida(true);
       setFeedback({ msg: "As senhas não coincidem. Tente novamente.", tipo: "error" });
@@ -177,19 +188,30 @@ export default function Entrar() {
                   />
 
                   <label htmlFor="login-password">Senha</label>
-                  <input
-                    id="login-password"
-                    type="password"
-                    value={loginSenha}
-                    onChange={(e) => {
-                      setLoginSenha(e.target.value);
-                      setLoginInvalido(false);
-                    }}
-                    placeholder="Digite sua senha"
-                    aria-invalid={loginInvalido}
-                    aria-describedby={loginInvalido ? feedbackId : undefined}
-                    required
-                  />
+                  <div className="campo-senha">
+                    <input
+                      id="login-password"
+                      type={verLoginSenha ? "text" : "password"}
+                      value={loginSenha}
+                      onChange={(e) => {
+                        setLoginSenha(e.target.value);
+                        setLoginInvalido(false);
+                      }}
+                      placeholder="Digite sua senha"
+                      aria-invalid={loginInvalido}
+                      aria-describedby={loginInvalido ? feedbackId : undefined}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="toggle-senha"
+                      aria-pressed={verLoginSenha}
+                      aria-label={verLoginSenha ? "Ocultar senha" : "Mostrar senha"}
+                      onClick={() => setVerLoginSenha((v) => !v)}
+                    >
+                      {verLoginSenha ? "Ocultar" : "Mostrar"}
+                    </button>
+                  </div>
 
                   <div className="login-opcoes">
                     <label className="lembrar">
@@ -213,24 +235,66 @@ export default function Entrar() {
                   <input id="register-email" type="email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} placeholder="seuemail@exemplo.com" required />
 
                   <label htmlFor="register-password">Senha</label>
-                  <input id="register-password" type="password" value={regSenha} onChange={(e) => setRegSenha(e.target.value)} placeholder="Crie uma senha" minLength={6} required />
+                  <div className="campo-senha">
+                    <input
+                      id="register-password"
+                      type={verRegSenha ? "text" : "password"}
+                      value={regSenha}
+                      onChange={(e) => setRegSenha(e.target.value)}
+                      placeholder="Crie uma senha fictícia"
+                      minLength={6}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="toggle-senha"
+                      aria-pressed={verRegSenha}
+                      aria-label={verRegSenha ? "Ocultar senha" : "Mostrar senha"}
+                      onClick={() => setVerRegSenha((v) => !v)}
+                    >
+                      {verRegSenha ? "Ocultar" : "Mostrar"}
+                    </button>
+                  </div>
 
                   <label htmlFor="register-confirm-password">Confirmar senha</label>
-                  <input
-                    id="register-confirm-password"
-                    ref={confirmaRef}
-                    type="password"
-                    value={regConfirma}
-                    onChange={(e) => {
-                      setRegConfirma(e.target.value);
-                      setConfirmaInvalida(false);
-                    }}
-                    placeholder="Digite a senha novamente"
-                    minLength={6}
-                    aria-invalid={confirmaInvalida}
-                    aria-describedby={confirmaInvalida ? feedbackId : undefined}
-                    required
-                  />
+                  <div className="campo-senha">
+                    <input
+                      id="register-confirm-password"
+                      ref={confirmaRef}
+                      type={verRegConfirma ? "text" : "password"}
+                      value={regConfirma}
+                      onChange={(e) => {
+                        setRegConfirma(e.target.value);
+                        setConfirmaInvalida(false);
+                      }}
+                      placeholder="Digite a senha novamente"
+                      minLength={6}
+                      aria-invalid={confirmaInvalida}
+                      aria-describedby={confirmaInvalida ? feedbackId : undefined}
+                      required
+                    />
+                    <button
+                      type="button"
+                      className="toggle-senha"
+                      aria-pressed={verRegConfirma}
+                      aria-label={verRegConfirma ? "Ocultar senha" : "Mostrar senha"}
+                      onClick={() => setVerRegConfirma((v) => !v)}
+                    >
+                      {verRegConfirma ? "Ocultar" : "Mostrar"}
+                    </button>
+                  </div>
+
+                  <label className="consent">
+                    <input
+                      type="checkbox"
+                      checked={consentido}
+                      onChange={(e) => setConsentido(e.target.checked)}
+                    />
+                    <span>
+                      Li e entendi que meus dados são usados apenas para simular o protótipo e ficam
+                      só neste navegador. <Link to="/privacidade">Ver aviso de privacidade</Link>.
+                    </span>
+                  </label>
 
                   <button type="submit" className="botao-login">
                     Criar conta

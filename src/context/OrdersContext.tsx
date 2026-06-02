@@ -10,6 +10,7 @@ import {
   STORAGE_KEYS,
   readJson,
   writeJson,
+  removeKey,
   type CartItem,
   type FormaPagamento,
   type Order,
@@ -24,6 +25,7 @@ interface OrdersContextValue {
     pagamento: FormaPagamento
   ) => Order;
   pedidosDoUsuario: (email: string) => Order[];
+  limparPedidos: () => void;
 }
 
 const OrdersContext = createContext<OrdersContextValue | null>(null);
@@ -71,9 +73,15 @@ export function OrdersProvider({ children }: { children: ReactNode }) {
     return readJson<Order[]>(STORAGE_KEYS.orders, []).filter((p) => p.userEmail === email);
   }, []);
 
+  const limparPedidos = useCallback(() => {
+    setUltimoPedido(null);
+    removeKey(STORAGE_KEYS.orders);
+    removeKey(STORAGE_KEYS.lastOrder);
+  }, []);
+
   const value = useMemo(
-    () => ({ ultimoPedido, registrarPedido, pedidosDoUsuario }),
-    [ultimoPedido, registrarPedido, pedidosDoUsuario]
+    () => ({ ultimoPedido, registrarPedido, pedidosDoUsuario, limparPedidos }),
+    [ultimoPedido, registrarPedido, pedidosDoUsuario, limparPedidos]
   );
 
   return <OrdersContext.Provider value={value}>{children}</OrdersContext.Provider>;

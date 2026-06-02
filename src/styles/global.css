@@ -1959,6 +1959,104 @@ body.theme-dark .skeleton::after {
   text-decoration: underline;
 }
 
+/* ---------- LGPD (privacidade, consentimento, simulação) ---------- */
+.privacidade-section {
+  margin-bottom: 22px;
+}
+
+.privacidade-section h2 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.privacidade-section p {
+  color: var(--muted);
+}
+
+.prose-list {
+  display: grid;
+  gap: 6px;
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.prose-list li {
+  line-height: 1.5;
+}
+
+.aviso-simulacao {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  background: var(--ok-soft);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.aviso-simulacao strong {
+  color: var(--brand-strong);
+}
+
+.consent {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 12px 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.consent input {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
+.consent a {
+  color: var(--brand);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.campo-senha {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.campo-senha input {
+  flex: 1;
+  padding-right: 92px;
+}
+
+.toggle-senha {
+  position: absolute;
+  right: 6px;
+  border: 0;
+  background: transparent;
+  color: var(--brand);
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+
+.checkout-confirm {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 6px 0 2px;
+  font-size: 0.92rem;
+}
+
+.checkout-confirm input {
+  margin-top: 3px;
+  flex: 0 0 auto;
+}
+
 /* ---------- 22. Transição de tema (flash radial) ---------- */
 .theme-flash {
   position: fixed;

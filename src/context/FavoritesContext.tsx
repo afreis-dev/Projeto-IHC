@@ -6,7 +6,7 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { STORAGE_KEYS, readJson, writeJson, type Favorite } from "../lib/storage";
+import { STORAGE_KEYS, readJson, writeJson, removeKey, type Favorite } from "../lib/storage";
 import { normalizarTexto, type Product } from "../data/products";
 import { useAuth } from "./AuthContext";
 import { useToast } from "./ToastContext";
@@ -16,6 +16,7 @@ interface FavoritesContextValue {
   alternar: (produto: Product) => boolean;
   remover: (index: number) => void;
   ehFavorito: (nome: string) => boolean;
+  limparFavoritos: () => void;
   total: number;
 }
 
@@ -66,9 +67,14 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
     [favoritos, aplicar]
   );
 
+  const limparFavoritos = useCallback(() => {
+    setFavoritos([]);
+    removeKey(STORAGE_KEYS.favorites);
+  }, []);
+
   const value = useMemo(
-    () => ({ favoritos, alternar, remover, ehFavorito, total: favoritos.length }),
-    [favoritos, alternar, remover, ehFavorito]
+    () => ({ favoritos, alternar, remover, ehFavorito, limparFavoritos, total: favoritos.length }),
+    [favoritos, alternar, remover, ehFavorito, limparFavoritos]
   );
 
   return <FavoritesContext.Provider value={value}>{children}</FavoritesContext.Provider>;

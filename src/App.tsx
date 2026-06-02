@@ -10,6 +10,7 @@ import CompraRealizada from "./routes/CompraRealizada";
 import Pedidos from "./routes/Pedidos";
 import Perfil from "./routes/Perfil";
 import Entrar from "./routes/Entrar";
+import Privacidade from "./routes/Privacidade";
 import NaoEncontrada from "./routes/NaoEncontrada";
 
 export default function App() {
@@ -26,6 +27,7 @@ export default function App() {
         <Route path="/pedidos" element={<Pedidos />} />
         <Route path="/perfil" element={<Perfil />} />
         <Route path="/entrar" element={<Entrar />} />
+        <Route path="/privacidade" element={<Privacidade />} />
         <Route path="*" element={<NaoEncontrada />} />
       </Route>
     </Routes>

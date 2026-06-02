@@ -29,6 +29,8 @@ interface AuthContextValue {
   /** Cria conta e já abre sessão; retorna ok/mensagem de erro. */
   registrar: (dados: RegistroDados) => { ok: boolean; mensagem?: string };
   logout: () => void;
+  /** Apaga a conta simulada e a sessão deste navegador (LGPD). */
+  apagarConta: () => void;
   definirRedirect: (destino: string) => void;
   consumirRedirect: () => string | null;
 }
@@ -80,6 +82,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setSessao(null);
   }, []);
 
+  const apagarConta = useCallback(() => {
+    removeKey(STORAGE_KEYS.session);
+    removeKey(STORAGE_KEYS.users);
+    removeKey(STORAGE_KEYS.checkoutRedirect);
+    setSessao(null);
+  }, []);
+
   const definirRedirect = useCallback((destino: string) => {
     writeJson(STORAGE_KEYS.checkoutRedirect, destino);
   }, []);
@@ -91,8 +100,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const value = useMemo(
-    () => ({ sessao, login, registrar, logout, definirRedirect, consumirRedirect }),
-    [sessao, login, registrar, logout, definirRedirect, consumirRedirect]
+    () => ({ sessao, login, registrar, logout, apagarConta, definirRedirect, consumirRedirect }),
+    [sessao, login, registrar, logout, apagarConta, definirRedirect, consumirRedirect]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;

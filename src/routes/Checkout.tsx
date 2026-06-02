@@ -56,6 +56,7 @@ export default function Checkout() {
 
   const [form, setForm] = useState(FORM_INICIAL);
   const [pagamento, setPagamento] = useState<FormaPagamento>("cartao");
+  const [confirmado, setConfirmado] = useState(false);
   const [cepFeedback, setCepFeedback] = useState<{ msg: string; tipo: "" | "success" | "error" }>({
     msg: "Digite o CEP para preencher o endereço automaticamente.",
     tipo: "",
@@ -115,6 +116,10 @@ export default function Checkout() {
       showToast("Preencha os campos obrigatórios antes de confirmar o pedido.", "error");
       return;
     }
+    if (!confirmado) {
+      showToast("Confirme que revisou os dados da compra antes de finalizar.", "error");
+      return;
+    }
     registrarPedido(itens, sessao, pagamento);
     limpar();
     showToast("Pedido confirmado com sucesso.", "success");
@@ -140,6 +145,11 @@ export default function Checkout() {
         <span className="tag">Checkout</span>
         <h1>Finalizar compra</h1>
         <p className="checkout-lead">Revise seus dados, escolha a forma de pagamento e confirme o pedido.</p>
+
+        <div className="aviso-simulacao" role="note">
+          <strong>Compra simulada.</strong> Seus dados não são enviados a nenhum servidor — esta
+          etapa apenas demonstra o fluxo de compra. Não use dados reais (CPF, cartão ou senha).
+        </div>
 
         <form id="checkout-form" ref={formRef} onSubmit={aoEnviar} noValidate>
           <div className="bloco">
@@ -321,6 +331,15 @@ export default function Checkout() {
           <p>Total</p>
           <span>{formatarPreco(subtotal + frete)}</span>
         </div>
+
+        <label className="checkout-confirm">
+          <input
+            type="checkbox"
+            checked={confirmado}
+            onChange={(e) => setConfirmado(e.target.checked)}
+          />
+          <span>Confirmo que revisei os dados da compra.</span>
+        </label>
 
         <button className="btn-confirmar" type="submit" form="checkout-form">
           Confirmar pedido
