@@ -182,6 +182,8 @@ export default function Entrar() {
                       setLoginInvalido(false);
                     }}
                     placeholder="seuemail@exemplo.com"
+                    inputMode="email"
+                    autoComplete="email"
                     aria-invalid={loginInvalido}
                     aria-describedby={loginInvalido ? feedbackId : undefined}
                     required
@@ -192,6 +194,7 @@ export default function Entrar() {
                     <input
                       id="login-password"
                       type={verLoginSenha ? "text" : "password"}
+                      autoComplete="current-password"
                       value={loginSenha}
                       onChange={(e) => {
                         setLoginSenha(e.target.value);
@@ -229,10 +232,10 @@ export default function Entrar() {
               <section id={cadastroPanelId} role="tabpanel" aria-labelledby={cadastroTabId} className="auth-panel">
                 <form className="form-login" onSubmit={enviarCadastro} noValidate>
                   <label htmlFor="register-name">Nome completo</label>
-                  <input id="register-name" value={regNome} onChange={(e) => setRegNome(e.target.value)} placeholder="Digite seu nome" required />
+                  <input id="register-name" value={regNome} onChange={(e) => setRegNome(e.target.value)} placeholder="Digite seu nome" autoComplete="name" required />
 
                   <label htmlFor="register-email">E-mail</label>
-                  <input id="register-email" type="email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} placeholder="seuemail@exemplo.com" required />
+                  <input id="register-email" type="email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} placeholder="seuemail@exemplo.com" inputMode="email" autoComplete="email" required />
 
                   <label htmlFor="register-password">Senha</label>
                   <div className="campo-senha">
@@ -243,6 +246,7 @@ export default function Entrar() {
                       onChange={(e) => setRegSenha(e.target.value)}
                       placeholder="Crie uma senha fictícia"
                       minLength={6}
+                      autoComplete="new-password"
                       required
                     />
                     <button
@@ -262,6 +266,7 @@ export default function Entrar() {
                       id="register-confirm-password"
                       ref={confirmaRef}
                       type={verRegConfirma ? "text" : "password"}
+                      autoComplete="new-password"
                       value={regConfirma}
                       onChange={(e) => {
                         setRegConfirma(e.target.value);

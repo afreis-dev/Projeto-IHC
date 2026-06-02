@@ -71,6 +71,8 @@ export function SearchBox() {
         type="search"
         className="search-input"
         placeholder="Pesquisar item raro"
+        autoComplete="off"
+        enterKeyHint="search"
         role="combobox"
         aria-expanded={mostrarPainel}
         aria-controls={listId}

@@ -157,21 +157,21 @@ export default function Checkout() {
             <div className="linha">
               <div className="campo">
                 <label htmlFor="nome">Nome completo</label>
-                <input id="nome" value={form.nome} onChange={(e) => set("nome", e.target.value)} placeholder="Digite seu nome" required />
+                <input id="nome" value={form.nome} onChange={(e) => set("nome", e.target.value)} placeholder="Digite seu nome" autoComplete="name" required />
               </div>
               <div className="campo">
                 <label htmlFor="cpf">CPF</label>
-                <input id="cpf" value={form.cpf} onChange={(e) => set("cpf", formatarCpf(e.target.value))} placeholder="000.000.000-00" required />
+                <input id="cpf" value={form.cpf} onChange={(e) => set("cpf", formatarCpf(e.target.value))} placeholder="000.000.000-00" inputMode="numeric" required />
               </div>
             </div>
             <div className="linha">
               <div className="campo">
                 <label htmlFor="email">E-mail</label>
-                <input id="email" type="email" value={form.email} onChange={(e) => set("email", e.target.value)} placeholder="seuemail@email.com" required />
+                <input id="email" type="email" value={form.email} onChange={(e) => set("email", e.target.value)} placeholder="seuemail@email.com" inputMode="email" autoComplete="email" required />
               </div>
               <div className="campo">
                 <label htmlFor="telefone">Telefone</label>
-                <input id="telefone" value={form.telefone} onChange={(e) => set("telefone", formatarTelefone(e.target.value))} placeholder="(00) 00000-0000" required />
+                <input id="telefone" value={form.telefone} onChange={(e) => set("telefone", formatarTelefone(e.target.value))} placeholder="(00) 00000-0000" inputMode="tel" autoComplete="tel" required />
               </div>
             </div>
           </div>
@@ -187,6 +187,8 @@ export default function Checkout() {
                   onChange={(e) => set("cep", formatarCep(e.target.value))}
                   onBlur={aoSairDoCep}
                   placeholder="00000-000"
+                  inputMode="numeric"
+                  autoComplete="postal-code"
                   aria-describedby="cep-feedback"
                   required
                 />
@@ -196,13 +198,13 @@ export default function Checkout() {
               </div>
               <div className="campo campo-grande">
                 <label htmlFor="rua">Rua</label>
-                <input id="rua" value={form.rua} onChange={(e) => set("rua", e.target.value)} placeholder="Nome da rua" required />
+                <input id="rua" value={form.rua} onChange={(e) => set("rua", e.target.value)} placeholder="Nome da rua" autoComplete="address-line1" required />
               </div>
             </div>
             <div className="linha">
               <div className="campo">
                 <label htmlFor="numero">Número</label>
-                <input id="numero" value={form.numero} onChange={(e) => set("numero", e.target.value)} placeholder="123" required />
+                <input id="numero" value={form.numero} onChange={(e) => set("numero", e.target.value)} placeholder="123" inputMode="numeric" required />
               </div>
               <div className="campo">
                 <label htmlFor="bairro">Bairro</label>
@@ -210,13 +212,13 @@ export default function Checkout() {
               </div>
               <div className="campo">
                 <label htmlFor="cidade">Cidade</label>
-                <input id="cidade" value={form.cidade} onChange={(e) => set("cidade", e.target.value)} placeholder="Sua cidade" required />
+                <input id="cidade" value={form.cidade} onChange={(e) => set("cidade", e.target.value)} placeholder="Sua cidade" autoComplete="address-level2" required />
               </div>
             </div>
             <div className="linha">
               <div className="campo">
                 <label htmlFor="estado">Estado</label>
-                <input id="estado" value={form.estado} onChange={(e) => set("estado", e.target.value)} placeholder="UF" required />
+                <input id="estado" value={form.estado} onChange={(e) => set("estado", e.target.value)} placeholder="UF" autoComplete="address-level1" required />
               </div>
               <div className="campo campo-grande">
                 <label htmlFor="complemento">Complemento</label>
@@ -251,21 +253,21 @@ export default function Checkout() {
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="cartao">Número do cartão</label>
-                    <input id="cartao" value={form.cartao} onChange={(e) => set("cartao", formatarCartao(e.target.value))} placeholder="0000 0000 0000 0000" required />
+                    <input id="cartao" value={form.cartao} onChange={(e) => set("cartao", formatarCartao(e.target.value))} placeholder="0000 0000 0000 0000" inputMode="numeric" autoComplete="cc-number" required />
                   </div>
                 </div>
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="validade">Validade</label>
-                    <input id="validade" value={form.validade} onChange={(e) => set("validade", formatarValidade(e.target.value))} placeholder="MM/AA" required />
+                    <input id="validade" value={form.validade} onChange={(e) => set("validade", formatarValidade(e.target.value))} placeholder="MM/AA" inputMode="numeric" autoComplete="cc-exp" required />
                   </div>
                   <div className="campo">
                     <label htmlFor="cvv">CVV</label>
-                    <input id="cvv" value={form.cvv} onChange={(e) => set("cvv", somenteDigitos(e.target.value).slice(0, 4))} placeholder="123" required />
+                    <input id="cvv" value={form.cvv} onChange={(e) => set("cvv", somenteDigitos(e.target.value).slice(0, 4))} placeholder="123" inputMode="numeric" autoComplete="cc-csc" required />
                   </div>
                   <div className="campo campo-grande">
                     <label htmlFor="titular">Nome do titular</label>
-                    <input id="titular" value={form.titular} onChange={(e) => set("titular", e.target.value)} placeholder="Nome no cartão" required />
+                    <input id="titular" value={form.titular} onChange={(e) => set("titular", e.target.value)} placeholder="Nome no cartão" autoComplete="cc-name" required />
                   </div>
                 </div>
               </div>
@@ -291,11 +293,11 @@ export default function Checkout() {
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="boleto-email">E-mail para receber o boleto</label>
-                    <input id="boleto-email" type="email" value={form.boletoEmail} onChange={(e) => set("boletoEmail", e.target.value)} placeholder="seuemail@exemplo.com" required />
+                    <input id="boleto-email" type="email" value={form.boletoEmail} onChange={(e) => set("boletoEmail", e.target.value)} placeholder="seuemail@exemplo.com" inputMode="email" autoComplete="email" required />
                   </div>
                   <div className="campo">
                     <label htmlFor="boleto-cpf">CPF do pagador</label>
-                    <input id="boleto-cpf" value={form.boletoCpf} onChange={(e) => set("boletoCpf", formatarCpf(e.target.value))} placeholder="000.000.000-00" required />
+                    <input id="boleto-cpf" value={form.boletoCpf} onChange={(e) => set("boletoCpf", formatarCpf(e.target.value))} placeholder="000.000.000-00" inputMode="numeric" required />
                   </div>
                 </div>
               </div>
