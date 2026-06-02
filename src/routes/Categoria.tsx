@@ -13,10 +13,22 @@ import { SkeletonGrid } from "../components/Skeleton";
 import { EmptyState } from "../components/EmptyState";
 
 const COPY: Record<Cat, { titulo: string; descricao: string }> = {
-  vinil: { titulo: "Vinis para colecionar som e capa.", descricao: "Discos com apelo visual e autenticidade verificada." },
-  cartas: { titulo: "Cartas raras para coleções memoráveis.", descricao: "Peças desejadas, com raridade, estado e laudo." },
-  livros: { titulo: "Livros para montar sua estante clássica.", descricao: "Edições de colecionador com curadoria verificada." },
-  jogos: { titulo: "Jogos e consoles que marcaram época.", descricao: "Itens retrô com forte carga nostálgica." },
+  vinil: {
+    titulo: "Vinis para colecionar som e capa.",
+    descricao: "Discos com apelo visual e autenticidade verificada.",
+  },
+  cartas: {
+    titulo: "Cartas raras para coleções memoráveis.",
+    descricao: "Peças desejadas, com raridade, estado e laudo.",
+  },
+  livros: {
+    titulo: "Livros para montar sua estante clássica.",
+    descricao: "Edições de colecionador com curadoria verificada.",
+  },
+  jogos: {
+    titulo: "Jogos e consoles que marcaram época.",
+    descricao: "Itens retrô com forte carga nostálgica.",
+  },
 };
 
 export default function Categoria() {
@@ -72,7 +84,10 @@ export default function Categoria() {
         </div>
       </section>
 
-      <section className="catalogo" aria-label={`Produtos da categoria ${CATEGORIA_LABEL[categoria]}`}>
+      <section
+        className="catalogo"
+        aria-label={`Produtos da categoria ${CATEGORIA_LABEL[categoria]}`}
+      >
         <div className="catalogo-tools">
           {/* Chips para trocar de categoria rapidamente (reconhecimento, não memorização) */}
           <div className="categoria-chips" role="group" aria-label="Filtrar por categoria">

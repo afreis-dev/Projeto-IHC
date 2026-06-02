@@ -142,7 +142,9 @@ export function Header() {
               type="button"
               className="theme-toggle"
               aria-pressed={tema === "dark"}
-              aria-label={tema === "dark" ? "Alternar para modo claro" : "Alternar para modo escuro"}
+              aria-label={
+                tema === "dark" ? "Alternar para modo claro" : "Alternar para modo escuro"
+              }
               title={tema === "dark" ? "Modo escuro ativo" : "Modo claro ativo"}
               onClick={trocarTema}
             >

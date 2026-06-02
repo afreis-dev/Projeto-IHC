@@ -57,8 +57,8 @@ export default function Privacidade() {
           <h2>Seu controle</h2>
           <p>
             Você pode visualizar, baixar (formato JSON) e apagar seus dados a qualquer momento na
-            área <Link to="/perfil">Perfil &gt; Meus dados e privacidade</Link>. Carrinho e favoritos
-            também podem ser esvaziados nas próprias telas.
+            área <Link to="/perfil">Perfil &gt; Meus dados e privacidade</Link>. Carrinho e
+            favoritos também podem ser esvaziados nas próprias telas.
           </p>
         </div>
 

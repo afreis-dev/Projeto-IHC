@@ -120,7 +120,11 @@ export default function Produto() {
               </div>
               <div className="produto-relacionados-grid">
                 {relacionados.map((item) => (
-                  <Link key={item.id} className="produto-relacionado-card" to={`/produto/${item.id}`}>
+                  <Link
+                    key={item.id}
+                    className="produto-relacionado-card"
+                    to={`/produto/${item.id}`}
+                  >
                     <div className="produto-relacionado-imagem">
                       <img src={item.image} alt={item.title} loading="lazy" />
                     </div>

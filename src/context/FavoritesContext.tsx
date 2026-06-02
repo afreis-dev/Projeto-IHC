@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import { STORAGE_KEYS, readJson, writeJson, removeKey, type Favorite } from "../lib/storage";
 import { normalizarTexto, type Product } from "../data/products";
 import { useAuth } from "./AuthContext";
@@ -35,7 +28,8 @@ export function FavoritesProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const ehFavorito = useCallback(
-    (nome: string) => favoritos.some((item) => normalizarTexto(item.nome) === normalizarTexto(nome)),
+    (nome: string) =>
+      favoritos.some((item) => normalizarTexto(item.nome) === normalizarTexto(nome)),
     [favoritos]
   );
 

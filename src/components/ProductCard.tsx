@@ -22,7 +22,11 @@ export function ProductCard({ produto, compacto = false }: Props) {
       whileHover={reduzir ? undefined : { y: -6 }}
       transition={{ duration: 0.2 }}
     >
-      <Link to={`/produto/${produto.id}`} className="produto-imagem produto-imagem--link" aria-label={`Ver ${produto.title}`}>
+      <Link
+        to={`/produto/${produto.id}`}
+        className="produto-imagem produto-imagem--link"
+        aria-label={`Ver ${produto.title}`}
+      >
         <img src={produto.image} alt={produto.title} loading="lazy" />
       </Link>
 

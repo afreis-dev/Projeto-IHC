@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import {
   STORAGE_KEYS,
   readJson,
@@ -19,11 +12,7 @@ import {
 
 interface OrdersContextValue {
   ultimoPedido: Order | null;
-  registrarPedido: (
-    itens: CartItem[],
-    sessao: Session | null,
-    pagamento: FormaPagamento
-  ) => Order;
+  registrarPedido: (itens: CartItem[], sessao: Session | null, pagamento: FormaPagamento) => Order;
   pedidosDoUsuario: (email: string) => Order[];
   limparPedidos: () => void;
 }

@@ -90,7 +90,10 @@ export default function Checkout() {
   async function aoSairDoCep() {
     const cepLimpo = somenteDigitos(form.cep);
     if (cepLimpo.length !== 8) {
-      setCepFeedback({ msg: "Digite um CEP válido para preencher o endereço automaticamente.", tipo: "error" });
+      setCepFeedback({
+        msg: "Digite um CEP válido para preencher o endereço automaticamente.",
+        tipo: "error",
+      });
       return;
     }
     setCepFeedback({ msg: "Buscando endereço...", tipo: "success" });
@@ -105,7 +108,10 @@ export default function Checkout() {
       }));
       setCepFeedback({ msg: "Endereço preenchido automaticamente pelo CEP.", tipo: "success" });
     } catch {
-      setCepFeedback({ msg: "Não foi possível localizar esse CEP. Confira e tente novamente.", tipo: "error" });
+      setCepFeedback({
+        msg: "Não foi possível localizar esse CEP. Confira e tente novamente.",
+        tipo: "error",
+      });
       showToast("CEP não encontrado. Confira os números digitados.", "error");
     }
   }
@@ -144,7 +150,9 @@ export default function Checkout() {
       <section className="checkout-form">
         <span className="tag">Checkout</span>
         <h1>Finalizar compra</h1>
-        <p className="checkout-lead">Revise seus dados, escolha a forma de pagamento e confirme o pedido.</p>
+        <p className="checkout-lead">
+          Revise seus dados, escolha a forma de pagamento e confirme o pedido.
+        </p>
 
         <div className="aviso-simulacao" role="note">
           <strong>Compra simulada.</strong> Seus dados não são enviados a nenhum servidor — esta
@@ -157,21 +165,52 @@ export default function Checkout() {
             <div className="linha">
               <div className="campo">
                 <label htmlFor="nome">Nome completo</label>
-                <input id="nome" value={form.nome} onChange={(e) => set("nome", e.target.value)} placeholder="Digite seu nome" autoComplete="name" required />
+                <input
+                  id="nome"
+                  value={form.nome}
+                  onChange={(e) => set("nome", e.target.value)}
+                  placeholder="Digite seu nome"
+                  autoComplete="name"
+                  required
+                />
               </div>
               <div className="campo">
                 <label htmlFor="cpf">CPF</label>
-                <input id="cpf" value={form.cpf} onChange={(e) => set("cpf", formatarCpf(e.target.value))} placeholder="000.000.000-00" inputMode="numeric" required />
+                <input
+                  id="cpf"
+                  value={form.cpf}
+                  onChange={(e) => set("cpf", formatarCpf(e.target.value))}
+                  placeholder="000.000.000-00"
+                  inputMode="numeric"
+                  required
+                />
               </div>
             </div>
             <div className="linha">
               <div className="campo">
                 <label htmlFor="email">E-mail</label>
-                <input id="email" type="email" value={form.email} onChange={(e) => set("email", e.target.value)} placeholder="seuemail@email.com" inputMode="email" autoComplete="email" required />
+                <input
+                  id="email"
+                  type="email"
+                  value={form.email}
+                  onChange={(e) => set("email", e.target.value)}
+                  placeholder="seuemail@email.com"
+                  inputMode="email"
+                  autoComplete="email"
+                  required
+                />
               </div>
               <div className="campo">
                 <label htmlFor="telefone">Telefone</label>
-                <input id="telefone" value={form.telefone} onChange={(e) => set("telefone", formatarTelefone(e.target.value))} placeholder="(00) 00000-0000" inputMode="tel" autoComplete="tel" required />
+                <input
+                  id="telefone"
+                  value={form.telefone}
+                  onChange={(e) => set("telefone", formatarTelefone(e.target.value))}
+                  placeholder="(00) 00000-0000"
+                  inputMode="tel"
+                  autoComplete="tel"
+                  required
+                />
               </div>
             </div>
           </div>
@@ -192,37 +231,79 @@ export default function Checkout() {
                   aria-describedby="cep-feedback"
                   required
                 />
-                <small className={`campo-feedback${cepFeedback.tipo ? ` is-${cepFeedback.tipo}` : ""}`} id="cep-feedback">
+                <small
+                  className={`campo-feedback${cepFeedback.tipo ? ` is-${cepFeedback.tipo}` : ""}`}
+                  id="cep-feedback"
+                >
                   {cepFeedback.msg}
                 </small>
               </div>
               <div className="campo campo-grande">
                 <label htmlFor="rua">Rua</label>
-                <input id="rua" value={form.rua} onChange={(e) => set("rua", e.target.value)} placeholder="Nome da rua" autoComplete="address-line1" required />
+                <input
+                  id="rua"
+                  value={form.rua}
+                  onChange={(e) => set("rua", e.target.value)}
+                  placeholder="Nome da rua"
+                  autoComplete="address-line1"
+                  required
+                />
               </div>
             </div>
             <div className="linha">
               <div className="campo">
                 <label htmlFor="numero">Número</label>
-                <input id="numero" value={form.numero} onChange={(e) => set("numero", e.target.value)} placeholder="123" inputMode="numeric" required />
+                <input
+                  id="numero"
+                  value={form.numero}
+                  onChange={(e) => set("numero", e.target.value)}
+                  placeholder="123"
+                  inputMode="numeric"
+                  required
+                />
               </div>
               <div className="campo">
                 <label htmlFor="bairro">Bairro</label>
-                <input id="bairro" value={form.bairro} onChange={(e) => set("bairro", e.target.value)} placeholder="Seu bairro" required />
+                <input
+                  id="bairro"
+                  value={form.bairro}
+                  onChange={(e) => set("bairro", e.target.value)}
+                  placeholder="Seu bairro"
+                  required
+                />
               </div>
               <div className="campo">
                 <label htmlFor="cidade">Cidade</label>
-                <input id="cidade" value={form.cidade} onChange={(e) => set("cidade", e.target.value)} placeholder="Sua cidade" autoComplete="address-level2" required />
+                <input
+                  id="cidade"
+                  value={form.cidade}
+                  onChange={(e) => set("cidade", e.target.value)}
+                  placeholder="Sua cidade"
+                  autoComplete="address-level2"
+                  required
+                />
               </div>
             </div>
             <div className="linha">
               <div className="campo">
                 <label htmlFor="estado">Estado</label>
-                <input id="estado" value={form.estado} onChange={(e) => set("estado", e.target.value)} placeholder="UF" autoComplete="address-level1" required />
+                <input
+                  id="estado"
+                  value={form.estado}
+                  onChange={(e) => set("estado", e.target.value)}
+                  placeholder="UF"
+                  autoComplete="address-level1"
+                  required
+                />
               </div>
               <div className="campo campo-grande">
                 <label htmlFor="complemento">Complemento</label>
-                <input id="complemento" value={form.complemento} onChange={(e) => set("complemento", e.target.value)} placeholder="Apartamento, bloco, referência..." />
+                <input
+                  id="complemento"
+                  value={form.complemento}
+                  onChange={(e) => set("complemento", e.target.value)}
+                  placeholder="Apartamento, bloco, referência..."
+                />
               </div>
             </div>
           </div>
@@ -253,21 +334,52 @@ export default function Checkout() {
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="cartao">Número do cartão</label>
-                    <input id="cartao" value={form.cartao} onChange={(e) => set("cartao", formatarCartao(e.target.value))} placeholder="0000 0000 0000 0000" inputMode="numeric" autoComplete="cc-number" required />
+                    <input
+                      id="cartao"
+                      value={form.cartao}
+                      onChange={(e) => set("cartao", formatarCartao(e.target.value))}
+                      placeholder="0000 0000 0000 0000"
+                      inputMode="numeric"
+                      autoComplete="cc-number"
+                      required
+                    />
                   </div>
                 </div>
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="validade">Validade</label>
-                    <input id="validade" value={form.validade} onChange={(e) => set("validade", formatarValidade(e.target.value))} placeholder="MM/AA" inputMode="numeric" autoComplete="cc-exp" required />
+                    <input
+                      id="validade"
+                      value={form.validade}
+                      onChange={(e) => set("validade", formatarValidade(e.target.value))}
+                      placeholder="MM/AA"
+                      inputMode="numeric"
+                      autoComplete="cc-exp"
+                      required
+                    />
                   </div>
                   <div className="campo">
                     <label htmlFor="cvv">CVV</label>
-                    <input id="cvv" value={form.cvv} onChange={(e) => set("cvv", somenteDigitos(e.target.value).slice(0, 4))} placeholder="123" inputMode="numeric" autoComplete="cc-csc" required />
+                    <input
+                      id="cvv"
+                      value={form.cvv}
+                      onChange={(e) => set("cvv", somenteDigitos(e.target.value).slice(0, 4))}
+                      placeholder="123"
+                      inputMode="numeric"
+                      autoComplete="cc-csc"
+                      required
+                    />
                   </div>
                   <div className="campo campo-grande">
                     <label htmlFor="titular">Nome do titular</label>
-                    <input id="titular" value={form.titular} onChange={(e) => set("titular", e.target.value)} placeholder="Nome no cartão" autoComplete="cc-name" required />
+                    <input
+                      id="titular"
+                      value={form.titular}
+                      onChange={(e) => set("titular", e.target.value)}
+                      placeholder="Nome no cartão"
+                      autoComplete="cc-name"
+                      required
+                    />
                   </div>
                 </div>
               </div>
@@ -278,11 +390,23 @@ export default function Checkout() {
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="pix-chave">Chave Pix</label>
-                    <input id="pix-chave" value={form.pixChave} onChange={(e) => set("pixChave", e.target.value)} placeholder="CPF, e-mail ou telefone" required />
+                    <input
+                      id="pix-chave"
+                      value={form.pixChave}
+                      onChange={(e) => set("pixChave", e.target.value)}
+                      placeholder="CPF, e-mail ou telefone"
+                      required
+                    />
                   </div>
                   <div className="campo">
                     <label htmlFor="pix-nome">Nome do pagador</label>
-                    <input id="pix-nome" value={form.pixNome} onChange={(e) => set("pixNome", e.target.value)} placeholder="Nome completo" required />
+                    <input
+                      id="pix-nome"
+                      value={form.pixNome}
+                      onChange={(e) => set("pixNome", e.target.value)}
+                      placeholder="Nome completo"
+                      required
+                    />
                   </div>
                 </div>
               </div>
@@ -293,11 +417,27 @@ export default function Checkout() {
                 <div className="linha">
                   <div className="campo">
                     <label htmlFor="boleto-email">E-mail para receber o boleto</label>
-                    <input id="boleto-email" type="email" value={form.boletoEmail} onChange={(e) => set("boletoEmail", e.target.value)} placeholder="seuemail@exemplo.com" inputMode="email" autoComplete="email" required />
+                    <input
+                      id="boleto-email"
+                      type="email"
+                      value={form.boletoEmail}
+                      onChange={(e) => set("boletoEmail", e.target.value)}
+                      placeholder="seuemail@exemplo.com"
+                      inputMode="email"
+                      autoComplete="email"
+                      required
+                    />
                   </div>
                   <div className="campo">
                     <label htmlFor="boleto-cpf">CPF do pagador</label>
-                    <input id="boleto-cpf" value={form.boletoCpf} onChange={(e) => set("boletoCpf", formatarCpf(e.target.value))} placeholder="000.000.000-00" inputMode="numeric" required />
+                    <input
+                      id="boleto-cpf"
+                      value={form.boletoCpf}
+                      onChange={(e) => set("boletoCpf", formatarCpf(e.target.value))}
+                      placeholder="000.000.000-00"
+                      inputMode="numeric"
+                      required
+                    />
                   </div>
                 </div>
               </div>

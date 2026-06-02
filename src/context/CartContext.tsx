@@ -1,11 +1,4 @@
-import {
-  createContext,
-  useCallback,
-  useContext,
-  useMemo,
-  useState,
-  type ReactNode,
-} from "react";
+import { createContext, useCallback, useContext, useMemo, useState, type ReactNode } from "react";
 import { STORAGE_KEYS, readJson, writeJson, removeKey, type CartItem } from "../lib/storage";
 import {
   buscarProdutoPorId,
@@ -37,9 +30,7 @@ function estoqueDoItem(item: CartItem): number {
 
 export function CartProvider({ children }: { children: ReactNode }) {
   const { showToast } = useToast();
-  const [itens, setItens] = useState<CartItem[]>(() =>
-    readJson<CartItem[]>(STORAGE_KEYS.cart, [])
-  );
+  const [itens, setItens] = useState<CartItem[]>(() => readJson<CartItem[]>(STORAGE_KEYS.cart, []));
 
   const aplicar = useCallback((novo: CartItem[]) => {
     setItens(novo);

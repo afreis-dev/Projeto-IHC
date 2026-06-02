@@ -116,7 +116,9 @@ export default function Carrinho() {
                     <div className="item-carrinho-meta">
                       <span>{formatarPreco(item.preco)} cada</span>
                       <small>
-                        {estoque > 0 ? `${estoque} unidade(s) disponível(is)` : "Estoque sob consulta"}
+                        {estoque > 0
+                          ? `${estoque} unidade(s) disponível(is)`
+                          : "Estoque sob consulta"}
                       </small>
                     </div>
                   </div>
@@ -150,7 +152,9 @@ export default function Carrinho() {
                         +
                       </button>
                     </div>
-                    <strong className="item-carrinho-subtotal">{formatarPreco(subtotalItem)}</strong>
+                    <strong className="item-carrinho-subtotal">
+                      {formatarPreco(subtotalItem)}
+                    </strong>
                   </div>
                   <button type="button" className="remover" onClick={() => remover(index)}>
                     Remover

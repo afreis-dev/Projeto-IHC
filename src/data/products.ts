@@ -96,8 +96,7 @@ export const PRODUCTS: Product[] = [
     price: 2500,
     image: asset("assets/Charizard Holo-carta.png"),
     summary: "Carta rara clássica para colecionadores de alto valor afetivo.",
-    details:
-      "Item premium com laudo de avaliação e procura constante entre colecionadores de TCG.",
+    details: "Item premium com laudo de avaliação e procura constante entre colecionadores de TCG.",
     condition: "Mint",
     authenticity: "Laudo de avaliação",
     availability: "1 unidade",
@@ -112,8 +111,7 @@ export const PRODUCTS: Product[] = [
     price: 10000,
     image: asset("assets/pikachu-ilustrator-carta.png"),
     summary: "Uma das cartas mais desejadas do mercado de coleção.",
-    details:
-      "Produto de altíssima raridade com autenticidade reforçada por laudo internacional.",
+    details: "Produto de altíssima raridade com autenticidade reforçada por laudo internacional.",
     condition: "Mint",
     authenticity: "Laudo internacional",
     availability: "2 unidades",
@@ -319,12 +317,7 @@ export function formatarPreco(preco: number): string {
 }
 
 export function normalizarTexto(valor: string | undefined | null): string {
-  return (valor || "")
-    .toString()
-    .normalize("NFD")
-    .replace(/[̀-ͯ]/g, "")
-    .toLowerCase()
-    .trim();
+  return (valor || "").toString().normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
 }
 
 export function buscarProdutoPorId(id: string | null | undefined): Product | null {

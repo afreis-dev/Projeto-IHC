@@ -1,11 +1,6 @@
 import { Link } from "react-router-dom";
 import { useDocumentTitle } from "../hooks/useDocumentTitle";
-import {
-  PRODUCTS,
-  obterDestaquesDaSemana,
-  obterBadge,
-  formatarPreco,
-} from "../data/products";
+import { PRODUCTS, obterDestaquesDaSemana, obterBadge, formatarPreco } from "../data/products";
 import { ProductGrid } from "../components/ProductGrid";
 
 export default function Home() {

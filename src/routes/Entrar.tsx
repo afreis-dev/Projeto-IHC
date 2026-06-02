@@ -61,7 +61,10 @@ export default function Entrar() {
     const usuario = login(loginEmail, loginSenha);
     if (!usuario) {
       setLoginInvalido(true);
-      setFeedback({ msg: "E-mail ou senha inválidos. Confira os dados e tente novamente.", tipo: "error" });
+      setFeedback({
+        msg: "E-mail ou senha inválidos. Confira os dados e tente novamente.",
+        tipo: "error",
+      });
       showToast("Login não realizado. Verifique seu e-mail e sua senha.", "error");
       loginEmailRef.current?.focus();
       return;
@@ -75,7 +78,10 @@ export default function Entrar() {
   function enviarCadastro(e: React.FormEvent) {
     e.preventDefault();
     if (!consentido) {
-      setFeedback({ msg: "Para criar a conta, confirme que leu o aviso de privacidade.", tipo: "error" });
+      setFeedback({
+        msg: "Para criar a conta, confirme que leu o aviso de privacidade.",
+        tipo: "error",
+      });
       showToast("Confirme o aviso de privacidade para continuar.", "error");
       return;
     }
@@ -93,7 +99,10 @@ export default function Entrar() {
       return;
     }
     setConfirmaInvalida(false);
-    setFeedback({ msg: "Conta criada com sucesso. Você será levado para a loja.", tipo: "success" });
+    setFeedback({
+      msg: "Conta criada com sucesso. Você será levado para a loja.",
+      tipo: "success",
+    });
     showToast("Cadastro realizado com sucesso.", "success");
     navigate(destinoPosLogin());
   }
@@ -109,7 +118,9 @@ export default function Entrar() {
       <div className="login-destaque">
         <span className="selo-vintage">Sua conta</span>
         <h1>Entre ou crie sua conta.</h1>
-        <p>É preciso estar logado para finalizar a compra, salvar o carrinho e acompanhar pedidos.</p>
+        <p>
+          É preciso estar logado para finalizar a compra, salvar o carrinho e acompanhar pedidos.
+        </p>
       </div>
 
       <div className="login-box">
@@ -143,7 +154,11 @@ export default function Entrar() {
           </section>
         ) : (
           <>
-            <div className="auth-switch" role="tablist" aria-label="Alternar entre login e cadastro">
+            <div
+              className="auth-switch"
+              role="tablist"
+              aria-label="Alternar entre login e cadastro"
+            >
               <button
                 type="button"
                 role="tab"
@@ -169,7 +184,12 @@ export default function Entrar() {
             </div>
 
             {aba === "login" ? (
-              <section id={loginPanelId} role="tabpanel" aria-labelledby={loginTabId} className="auth-panel">
+              <section
+                id={loginPanelId}
+                role="tabpanel"
+                aria-labelledby={loginTabId}
+                className="auth-panel"
+              >
                 <form className="form-login" onSubmit={enviarLogin} noValidate>
                   <label htmlFor="login-email">E-mail</label>
                   <input
@@ -229,13 +249,34 @@ export default function Entrar() {
                 </form>
               </section>
             ) : (
-              <section id={cadastroPanelId} role="tabpanel" aria-labelledby={cadastroTabId} className="auth-panel">
+              <section
+                id={cadastroPanelId}
+                role="tabpanel"
+                aria-labelledby={cadastroTabId}
+                className="auth-panel"
+              >
                 <form className="form-login" onSubmit={enviarCadastro} noValidate>
                   <label htmlFor="register-name">Nome completo</label>
-                  <input id="register-name" value={regNome} onChange={(e) => setRegNome(e.target.value)} placeholder="Digite seu nome" autoComplete="name" required />
+                  <input
+                    id="register-name"
+                    value={regNome}
+                    onChange={(e) => setRegNome(e.target.value)}
+                    placeholder="Digite seu nome"
+                    autoComplete="name"
+                    required
+                  />
 
                   <label htmlFor="register-email">E-mail</label>
-                  <input id="register-email" type="email" value={regEmail} onChange={(e) => setRegEmail(e.target.value)} placeholder="seuemail@exemplo.com" inputMode="email" autoComplete="email" required />
+                  <input
+                    id="register-email"
+                    type="email"
+                    value={regEmail}
+                    onChange={(e) => setRegEmail(e.target.value)}
+                    placeholder="seuemail@exemplo.com"
+                    inputMode="email"
+                    autoComplete="email"
+                    required
+                  />
 
                   <label htmlFor="register-password">Senha</label>
                   <div className="campo-senha">
