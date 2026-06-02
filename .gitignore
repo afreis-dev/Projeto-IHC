@@ -38,6 +38,16 @@ dist/
 *.egg-info/
 .eggs/
 
+# Node / Vite (app React da Unidade 2)
+node_modules/
+dist-ssr/
+*.local
+.vite/
+*.tsbuildinfo
+
+# Config local de ferramentas
+.claude/
+
 # IDE and OS files
 .vscode/
 .idea/
