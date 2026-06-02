@@ -1,4 +1,4 @@
-// Catálogo do RELIC — porta tipada de unidade-1/js/products.js
+// Catálogo do RELIC — modelo tipado dos produtos colecionáveis.
 // As imagens vivem em /public/assets e são resolvidas com o base do Vite.
 
 export type Categoria = "vinil" | "cartas" | "livros" | "jogos";

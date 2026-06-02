@@ -1,5 +1,5 @@
 // Máscaras de formulário e consulta de CEP (ViaCEP).
-// Porta de unidade-1/js/script.js (formatarCpf/Telefone/Cep/Cartao/Validade, buscarCep).
+// formatarCpf/Telefone/Cep/Cartao/Validade + buscarCep.
 
 export function somenteDigitos(valor: string): string {
   return (valor || "").replace(/\D/g, "");

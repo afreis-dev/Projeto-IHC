@@ -1,5 +1,5 @@
-// Persistência em localStorage — porta dos helpers de unidade-1/js/script.js.
-// Mantém as MESMAS chaves para preservar dados de quem já usou o protótipo.
+// Persistência local (localStorage) do protótipo RELIC.
+// Mantém chaves estáveis para preservar os dados de quem já usou o protótipo.
 
 export const STORAGE_KEYS = {
   cart: "relic-cart",

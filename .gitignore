@@ -53,3 +53,7 @@ dist-ssr/
 .idea/
 Thumbs.db
 .DS_Store
+
+# Arquivos de lock/temporários do LibreOffice/Office (relatório aberto)
+.~lock.*#
+~$*

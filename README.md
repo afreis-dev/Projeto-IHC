@@ -4,7 +4,7 @@ Protótipo de marketplace para itens colecionáveis, raros e vintage, desenvolvi
 
 O projeto foi pensado para melhorar a experiência de compra e navegação de usuários interessados em **vinis, cartas, livros e jogos clássicos**, com foco em **usabilidade, acessibilidade, feedback visual, prevenção de erros e clareza nas ações**.
 
-> **Unidade 2 — Aprimoramento e Validação da Interface:** nesta etapa o protótipo foi reescrito de HTML/CSS/JS puro para **React + TypeScript + Motion (Framer Motion)**, incorporando melhorias de **acessibilidade digital (WCAG 2.1 AA)**, correções baseadas em **avaliação heurística (Nielsen)** e ajustes a partir de **validação com usuários**. A versão original (Unidade 1) está arquivada em [`unidade-1/`](./unidade-1) como referência do "antes".
+> **Unidade 2 — Aprimoramento e Validação da Interface:** nesta etapa o protótipo foi reescrito de HTML/CSS/JS puro para **React + TypeScript + Motion (Framer Motion)**, incorporando melhorias de **acessibilidade digital (WCAG 2.1 AA)**, correções baseadas em **avaliação heurística (Nielsen)** e ajustes a partir de **validação com usuários**. A versão original (Unidade 1, em HTML/CSS/JS) permanece preservada no histórico do Git como referência do "antes".
 
 ## Visão geral
 
@@ -45,7 +45,6 @@ Projeto-IHC/
 |   |-- routes/                 # Home, Categoria, Produto, Carrinho, Checkout...
 |   |-- hooks/                  # useDocumentTitle, useRequireAuth
 |   |-- styles/                 # global.css + a11y.css + components.css
-|-- unidade-1/                  # versão original (HTML/CSS/JS) — referência
 ```
 
 ## Funcionalidades
