@@ -113,7 +113,6 @@ export default function Carrinho() {
                   <img src={item.imagem} alt={item.nome} />
                   <div className="info">
                     <h3>{item.nome}</h3>
-                    <p>Item reservado para colecionadores.</p>
                     <div className="item-carrinho-meta">
                       <span>{formatarPreco(item.preco)} cada</span>
                       <small>

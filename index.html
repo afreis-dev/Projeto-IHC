@@ -8,6 +8,14 @@
   </head>
   <body>
     <div id="root"></div>
+    <!-- Aplica o tema salvo antes da pintura para evitar flash de tela clara. -->
+    <script>
+      try {
+        if (JSON.parse(localStorage.getItem("relic-theme")) === "dark") {
+          document.body.classList.add("theme-dark");
+        }
+      } catch (e) {}
+    </script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

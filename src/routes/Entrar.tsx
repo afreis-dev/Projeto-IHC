@@ -96,35 +96,12 @@ export default function Entrar() {
   return (
     <section className="login-container">
       <div className="login-destaque">
-        <span className="selo-vintage">Acesso seguro</span>
+        <span className="selo-vintage">Sua conta</span>
         <h1>Entre ou crie sua conta.</h1>
-        <p>
-          Para finalizar a compra, salvar o carrinho e acompanhar pedidos, é preciso estar
-          autenticado. Se você chegou aqui antes do checkout, depois do login a loja leva você de
-          volta para a compra.
-        </p>
-
-        <div className="login-cards">
-          <article className="mini-card">
-            <span className="mini-tag">Login</span>
-            <h2>Continue sua compra</h2>
-            <p>Quem já tem conta volta para o checkout sem perder o carrinho.</p>
-          </article>
-          <article className="mini-card">
-            <span className="mini-tag">Cadastro</span>
-            <h2>Crie sua conta</h2>
-            <p>Registre nome, e-mail e senha para comprar e acompanhar pedidos.</p>
-          </article>
-          <article className="mini-card">
-            <span className="mini-tag">Checkout</span>
-            <h2>Pagamento flexível</h2>
-            <p>Depois do login, você escolhe entre cartão, Pix ou boleto.</p>
-          </article>
-        </div>
+        <p>É preciso estar logado para finalizar a compra, salvar o carrinho e acompanhar pedidos.</p>
       </div>
 
       <div className="login-box">
-        <span className="selo-vintage">Autenticação</span>
         <h2>Sua conta na RELIC</h2>
 
         {/* Feedback acessível anunciado a leitores de tela */}
@@ -155,8 +132,6 @@ export default function Entrar() {
           </section>
         ) : (
           <>
-            <p className="login-texto">Escolha entre entrar na conta existente ou criar um cadastro rápido.</p>
-
             <div className="auth-switch" role="tablist" aria-label="Alternar entre login e cadastro">
               <button
                 type="button"

@@ -1,6 +1,8 @@
 /* ============================================================
-   Melhorias de acessibilidade — Unidade 2 (WCAG 2.1 AA)
-   Importado DEPOIS de global.css para sobrescrever quando preciso.
+   Camada de acessibilidade — Unidade 2 (WCAG 2.1 AA)
+   Importada DEPOIS de global.css. Tokens vivem em global.css;
+   aqui ficam apenas regras de acessibilidade (foco, leitor de
+   tela, alvos de toque, erros de formulário, movimento reduzido).
    ============================================================ */
 
 /* 1) Foco sempre visível para navegação por teclado (WCAG 2.4.7) */
@@ -11,28 +13,23 @@ select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible,
 [role="button"]:focus-visible,
-.produto-card:focus-visible {
-  outline: 3px solid var(--accent);
-  outline-offset: 3px;
+.produto-card:focus-visible,
+.chip:focus-visible,
+.search-suggestion-item:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
   border-radius: 8px;
-}
-
-body.theme-dark a:focus-visible,
-body.theme-dark button:focus-visible,
-body.theme-dark input:focus-visible,
-body.theme-dark select:focus-visible {
-  outline-color: #ffd9a8;
 }
 
 /* 2) Skip link — pular para o conteúdo (WCAG 2.4.1) */
 .skip-link {
   position: absolute;
   left: 16px;
-  top: -56px;
+  top: -64px;
   z-index: 1000;
   padding: 12px 18px;
   background: var(--brand);
-  color: #fff;
+  color: var(--on-brand);
   border-radius: 0 0 12px 12px;
   font-weight: 600;
   transition: top 0.2s ease;
@@ -54,19 +51,15 @@ body.theme-dark select:focus-visible {
   border: 0;
 }
 
-/* 4) Contraste de texto secundário ajustado para AA (>= 4.5:1) */
-:root {
-  --muted: #5f4334;
-}
-body.theme-dark {
-  --muted: #d9c3ad;
-}
-
-/* 5) Alvos de toque com no mínimo 44x44px (WCAG 2.5.5) */
-.nav-actions a,
+/* 4) Alvos de toque com no mínimo 44x44px (WCAG 2.5.5 / mobile) */
 .nav-links a,
+.cart-link,
+.account-trigger,
 .theme-toggle,
-.quantity-button {
+.chip,
+.quantity-button,
+.auth-tab,
+.toggle-senha {
   min-height: 44px;
   display: inline-flex;
   align-items: center;
@@ -77,157 +70,25 @@ body.theme-dark {
   justify-content: center;
 }
 
-/* 6) Erros de formulário acessíveis (aria-invalid + mensagem) */
+/* 5) Erros de formulário acessíveis (aria-invalid + mensagem) */
 input[aria-invalid="true"],
 select[aria-invalid="true"] {
-  border-color: #c0392b !important;
-  background-color: rgba(192, 57, 43, 0.06);
+  border-color: var(--err) !important;
+  background-color: var(--err-soft);
+}
+.form-login input.is-invalid {
+  border-color: var(--err);
+  background: var(--err-soft);
 }
 .campo-erro {
   display: block;
   margin-top: 6px;
-  color: #b62a1c;
+  color: var(--err);
   font-size: 0.85rem;
   font-weight: 600;
 }
-body.theme-dark .campo-erro {
-  color: #ff9b8a;
-}
 
-/* 7) Combobox de busca — item ativo via teclado (setas) */
-.search-suggestion-item.is-active,
-.search-suggestion-item[aria-selected="true"] {
-  background: var(--bg-strong);
-  outline: 2px solid var(--accent);
-  outline-offset: -2px;
-}
-.search-empty {
-  padding: 16px;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-/* 8) Chips de filtro por categoria (descoberta de produtos) */
-.categoria-chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 4px 0 8px;
-}
-.chip {
-  border: 1px solid var(--border);
-  background: var(--surface);
-  color: var(--text);
-  padding: 9px 16px;
-  border-radius: 999px;
-  font-size: 0.9rem;
-  font-weight: 600;
-  cursor: pointer;
-  min-height: 40px;
-  transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
-}
-.chip:hover {
-  border-color: var(--accent);
-}
-.chip[aria-pressed="true"] {
-  background: var(--brand);
-  border-color: var(--brand);
-  color: #fff;
-}
-
-/* 9) Breadcrumb (reconhecimento de localização) */
-.breadcrumb {
-  font-size: 0.88rem;
-  color: var(--muted);
-  margin-bottom: 14px;
-}
-.breadcrumb a:hover {
-  text-decoration: underline;
-}
-.breadcrumb [aria-current="page"] {
-  color: var(--text);
-  font-weight: 600;
-}
-
-/* 10) Skeletons de carregamento (estado do sistema) */
-.skeleton-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-  gap: 22px;
-}
-.skeleton-card {
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border);
-  background: var(--surface);
-  padding: 16px;
-  min-height: 320px;
-}
-.skeleton {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-strong);
-  border-radius: 10px;
-}
-.skeleton::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  transform: translateX(-100%);
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.45),
-    transparent
-  );
-  animation: skeleton-shimmer 1.3s infinite;
-}
-body.theme-dark .skeleton::after {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
-}
-.skeleton-thumb {
-  height: 180px;
-  margin-bottom: 14px;
-}
-.skeleton-line {
-  height: 14px;
-  margin-bottom: 10px;
-}
-.skeleton-line.short {
-  width: 55%;
-}
-@keyframes skeleton-shimmer {
-  100% {
-    transform: translateX(100%);
-  }
-}
-
-/* 11) Nav: indicação de página atual (visibilidade de status) */
-.nav-links a[aria-current="page"] {
-  color: var(--brand);
-  font-weight: 700;
-  border-bottom: 2px solid var(--accent);
-}
-
-/* 12) Badge de quantidade do carrinho */
-.cart-link {
-  position: relative;
-}
-.cart-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 22px;
-  height: 22px;
-  margin-left: 6px;
-  padding: 0 6px;
-  border-radius: 999px;
-  background: var(--brand);
-  color: #fff;
-  font-size: 0.72rem;
-  font-weight: 700;
-}
-
-/* 13) Respeitar "movimento reduzido" do sistema (WCAG 2.3.3) */
+/* 6) Respeitar "movimento reduzido" do sistema (WCAG 2.3.3) */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

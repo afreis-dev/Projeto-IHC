@@ -18,11 +18,8 @@ export default function Home() {
       <section className="hero">
         <div className="hero-copy">
           <span className="tag">Curadoria vintage</span>
-          <h1>Raridades para quem coleciona memória, design e história.</h1>
-          <p>
-            Vinis, cartas, livros e jogos em uma vitrine mais visual, com peças escolhidas para quem
-            gosta de nostalgia e descoberta.
-          </p>
+          <h1>Raridades para quem coleciona memória e história.</h1>
+          <p>Vinis, cartas, livros e jogos raros em uma vitrine visual.</p>
           <div className="hero-actions">
             <Link to="/categoria/vinil" className="button-primary">
               Ver destaques
@@ -60,7 +57,7 @@ export default function Home() {
         <div className="section-head">
           <div>
             <h2 id="destaques-titulo">Destaques da semana</h2>
-            <p>Uma seleção forte de itens para explorar por imagem, selo e preço.</p>
+            <p>Itens selecionados para explorar.</p>
           </div>
         </div>
         <ProductGrid produtos={selecao} compacto />

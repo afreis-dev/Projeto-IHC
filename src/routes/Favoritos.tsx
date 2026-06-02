@@ -50,7 +50,6 @@ export default function Favoritos() {
                 <img src={item.imagem} alt={item.nome} />
                 <div className="info">
                   <h3>{item.nome}</h3>
-                  <p>Item salvo na sua lista de favoritos.</p>
                   <span>{produto ? formatarPreco(produto.price) : "Produto indisponível"}</span>
                 </div>
                 <div className="item-carrinho-acoes">

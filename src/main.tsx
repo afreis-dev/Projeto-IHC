@@ -5,7 +5,6 @@ import { AppProviders } from "./context/AppProviders";
 import App from "./App";
 import "./styles/global.css";
 import "./styles/a11y.css";
-import "./styles/components.css";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
