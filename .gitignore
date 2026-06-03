@@ -45,8 +45,6 @@ dist-ssr/
 .vite/
 *.tsbuildinfo
 
-# Config local de ferramentas
-.claude/
 
 # IDE and OS files
 .vscode/
