@@ -934,6 +934,29 @@ button:disabled {
   border: 1px solid var(--border);
   background: var(--surface-strong);
   color: var(--text);
+  font-size: 1rem;
+}
+
+.catalogo-filtros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  align-items: end;
+}
+
+.catalogo-filtros .filtro-grupo {
+  max-width: none;
+}
+
+.filtros-reset {
+  justify-self: start;
+  padding: 6px 2px;
+  background: none;
+  border: none;
+  color: var(--brand-strong);
+  font-weight: 700;
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 /* ---------- 12. Produto (detalhe) ---------- */
