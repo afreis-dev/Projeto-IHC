@@ -44,13 +44,13 @@ Projeto-IHC/
 |   |-- components/             # Header, Footer, SearchBox, ProductCard, etc.
 |   |-- routes/                 # Home, Categoria, Produto, Carrinho, Checkout...
 |   |-- hooks/                  # useDocumentTitle, useRequireAuth
-|   |-- styles/                 # global.css + a11y.css + components.css
+|   |-- styles/                 # global.css + a11y.css
 ```
 
 ## Funcionalidades
 
 - página inicial com destaques e navegação entre categorias
-- páginas de categorias (`vinil`, `cartas`, `livros`, `jogos`) com filtro e chips
+- páginas de categorias (`vinil`, `cartas`, `livros`, `jogos`) com filtros por estado, autenticidade e disponibilidade, ordenação por preço, busca na categoria e chips de navegação
 - página individual de produto com itens relacionados
 - busca com sugestões automáticas (combobox acessível, navegável por teclado)
 - login e cadastro com tratamento de erros acessível
@@ -68,6 +68,7 @@ Projeto-IHC/
 - **erros de formulário acessíveis** (`aria-invalid`, `aria-describedby`, foco no 1º erro)
 - contraste de texto ajustado para **WCAG AA** e respeito a `prefers-reduced-motion`
 - alvos de toque com no mínimo 44×44px e títulos de página por rota
+- layout responsivo com **reflow** (WCAG 1.4.10): imagens de produtos e cards de relacionados se ajustam à moldura sem rolagem horizontal nem transbordamento, mesmo com zoom ou fontes ampliadas
 
 ## Conceitos de IHC aplicados
 
